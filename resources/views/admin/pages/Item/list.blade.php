@@ -11,7 +11,7 @@
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Item Image</th>
-      <th scope="col">Type</th>
+      <th scope="col">Category</th>
       <th scope="col">Action</th>
     </tr>
   </thead>

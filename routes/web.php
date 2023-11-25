@@ -38,6 +38,7 @@ Route::get('/customer/register',[FrontendCustomerController::class,'register'])-
 Route::post('/customer/doregister', [FrontendCustomerController::class, 'doRegister'])->name('customer.doregister');
 Route::get('/cutomer/login', [FrontendCustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/dologin', [FrontendCustomerController::class, 'doLogin'])->name('customer.dologin');
+Route::get('/customer/profile', [FrontendCustomerController::class, 'showProfile'])->name('customer.profile');
 
 Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
 

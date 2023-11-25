@@ -20,7 +20,7 @@ class FrontendCustomerController extends Controller
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
     ]);
-    //notify()->success('Customer Registration successful.');
+    notify()->success('Customer Registration successful.');
     return redirect()->back();
 
   }
@@ -33,6 +33,8 @@ class FrontendCustomerController extends Controller
             $validate=Validator::Make($request->all(),[
             'email'=>'required',
             'password'=>'required']);
+
+            return redirect()->route('customer.profile');
 
             if($validate->fails())
             {
@@ -58,8 +60,12 @@ class FrontendCustomerController extends Controller
     public function logout()
     {
         auth()->logout();
-        //notify()->success('Logout Success.');    
+        notify()->success('Logout Success.');    
         return redirect()->route('home');
+    }
+
+    public function showProfile(){
+        return view('frontend.front_pages.profile');
     }
         }
     

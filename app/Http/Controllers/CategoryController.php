@@ -61,15 +61,15 @@ class CategoryController extends Controller
     }
     public function edit($id){
 
-        $category=Category::find($id);
-        return view('admin.pages.categories.edit',compact('category'));
+        $category_data=Category::find($id);
+        return view('admin.pages.categories.edit',compact('category_data'));
     }
     
     public function update(Request $request,$id)
     {
         
         
-        $category=Category::find($id);
+        $category_data=Category::find($id);
         //$category_image='';
         
         if($request->hasFile('image')){
@@ -80,7 +80,7 @@ class CategoryController extends Controller
             
         }
         
-         $category->update([
+         $category_data->update([
             'category_name'=>$request->category_name,
              'image'=>$request->image,
              'category_description'=>$request->category_description,
@@ -93,10 +93,10 @@ class CategoryController extends Controller
     
         public function delete($id)
     {
-      $category=Category::find($id);
-      if($category)
+      $category_data=Category::find($id);
+      if($category_data)
       {
-        $category->delete();
+        $category_data->delete();
       }
 
       notify()->success('category Deleted Successfully.');

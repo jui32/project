@@ -17,6 +17,16 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string ('type');
             $table->timestamps();
+            // $table->id();
+            // $table->integer('category_id');
+            // $table->string('name');
+            // $table->text('image')->nullable();
+            // $table->double('price');
+            // $table->text('description')->nullable();
+            // $table->string('status')->default('active');
+            // $table->integer('stock')->default(10);
+
+           
 
             
         });

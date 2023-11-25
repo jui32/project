@@ -18,8 +18,16 @@
                 <small id="emailHelp" class="form-text text-muted">add image</small>
               </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input type="text" class="form-control" name="type">
+                {{-- <label for="exampleInputEmail1" class="form-label">Type</label>
+                <input type="text" class="form-control" name="type"> --}}
+                <label for="">Select Category:</label>
+                <select required class="form-control" name="type" id="">
+             
+                 @foreach ($categories as $cat )
+                 <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                 @endforeach
+                
+                </select>
             </div>  
             
             <button type="submit" class="btn btn-primary">Submit</button>

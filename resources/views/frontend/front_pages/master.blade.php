@@ -37,7 +37,8 @@
              margin: 5px;
              border: 1px solid #ccc;
              float: left;
-             width: 250px;
+             width: 250px !important;
+             height: 400px !important;
          }
 
          div.gallery:hover {
@@ -95,38 +96,21 @@
 
 
      <div class="container">
-
+     {{-- {{$items}} --}}
+     {{-- {{$categories}} --}}
          @foreach ($items as $item)
              <div class="gallery">
                  <a target="_blank" href="img/img1.jpg">
                      <img src="{{ asset('uploads/Item/' . $item->image) }}" alt="Cinque Terre" width="800"
                          height="400">
+                         <br>Name: <b>{{$item->name}}</b>
+                         {{-- <br>Type: <b>{{$item->type}}</b> --}}
+                         <br>Type: <b>{{collect($categories)->where('id', $item->type)->pluck('category_name')->first();}}</b>
                  </a>
                  <div class="desc">Add a description of the image here</div>
              </div>
          @endforeach
 
-
-         {{-- <div class="gallery">
-    <a target="_blank" href="img/img2.jpg">
-      <img src="img/img2.jpg" alt="Forest" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="img/img3.jpg">
-      <img src="img/img3.jpg" alt="Northern Lights" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div>
-  
-  <div class="gallery">
-    <a target="_blank" href="img/img4.jpg">
-      <img src="img/img4.jpg" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
-  </div> --}}
      </div>
 
 

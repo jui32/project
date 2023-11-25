@@ -54,8 +54,10 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Login From</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="{{route('customer.dologin')}}" method="post">
+        @csrf
       <div class="modal-body">
-       <form action="">
+        
         <div class="mb-3">
           <label for="">Email</label>
           <input type="email" name="email" class="form-control" placeholder="Enter Email">
@@ -64,12 +66,13 @@
           <label for="">Password</label>
           <input type="password" name="password" class="form-control" placeholder="Enter Password">
         </div>
-       </form>
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Submit</button>
+        <input type="submit" class="btn btn-success" value="Submit">
       </div>
+    </form>
     </div>
   </div>
 </div>

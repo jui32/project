@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-        <form action="{{ route('category.update',$category->id) }}" method="post" enctype= 'multipart/form-data'>
+        <form action="{{ route('category.update',$category_data->id) }}" method="post" enctype= 'multipart/form-data'>
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" name="name"class="form-label">Category Name</label>
@@ -15,7 +15,7 @@
 
             <div class="form-group">
                 <label for="InputCategoriesImage">Categories image </label>
-                <input type="file" class="form-control" name="image" id="InputCategoriesimage" aria-describedby="emailHelp" placeholder="Enter your name">
+                <input type="file" class="form-control" name="image" id="InputCategoriesimage" aria-describedby="emailHelp" placeholder="Add image">
                 <small id="emailHelp" class="form-text text-muted">add image</small>
               </div>
 
