@@ -20,16 +20,7 @@
             <div class="mb-3">
 
 
-                <div class="form-group">
-                    <label for="">Select Category:</label>
-                   <select required class="form-control" name="category_id" id="">
-                
-                    @foreach ($category_data as $cat )
-                    <option value="{{$cat->id}}">{{$cat->name}}</option>
-                    @endforeach
-                   
-                   </select>
-                  </div>
+               
                 
                   <div class="form-group">
                     <label for="">Enter Price: </label>
@@ -46,21 +37,26 @@
                     <input required type="number" class="form-control" placeholder="Enter Stock" name="item_stock">
                   </div>
 
+
+
+                  <div class="form-group">
+                    <label for="">Select Category:</label>
+                   <select required class="form-control" name="category_id" id="">
+                
+                    @foreach ($category_data as $cat )
+                    <option value="{{$cat->id}}">{{$cat->name}}</option>
+                    @endforeach
+                   
+                   </select>
+                  </div>
+
+
                   <div class="form-group">
                     <label for="">Enter Item Description:</label>
                      <textarea class="form-control" placeholder="Enter product short description" name="item_description" id="" cols="30" rows="5"></textarea>
                     </div>
                 
-                
-
-
-
-
-
-
-
-
-
+              
 
              {{-- <label for="exampleInputEmail1" class="form-label">Type</label>
                 <input type="text" class="form-control" name="type">  --}}

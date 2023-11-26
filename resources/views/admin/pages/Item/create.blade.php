@@ -17,6 +17,25 @@
                 <input type="file" class="form-control" name="image" id="InputItemimage" aria-describedby="emailHelp" placeholder="Add picture">
                 <small id="emailHelp" class="form-text text-muted">add image</small>
               </div>
+              
+
+              <div class="form-group">
+                <label for="">Enter Price: </label>
+                <input required type="number" class="form-control" placeholder="Enter price" name="item_price">
+                
+                @error('itemt_price')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                
+              </div>
+            
+              <div class="form-group">
+                <label for="">Enter Stock: </label>
+                <input required type="number" class="form-control" placeholder="Enter Stock" name="item_stock">
+              </div>
+
+
+
             <div class="mb-3">
                 {{-- <label for="exampleInputEmail1" class="form-label">Type</label>
                 <input type="text" class="form-control" name="type"> --}}
@@ -29,6 +48,11 @@
                 
                 </select>
             </div>  
+
+            <div class="form-group">
+                <label for="">Enter Product Description:</label>
+                 <textarea class="form-control" placeholder="Enter product short description" name="item_description" id="" cols="30" rows="5"></textarea>
+                </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>

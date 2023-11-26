@@ -28,7 +28,9 @@ class ItemController extends Controller
         $validate=Validator::make($request->all(),[
              'name'=>'required',
              'type'=>'required',
-
+             'price'=>'required',
+             'stock'=>'required',
+             'item_description'=>'required',
         ]);
 
 
@@ -54,6 +56,9 @@ class ItemController extends Controller
             'name'=>$request->name,
             'image'=>$item_image,
             'type'=>$request->type,
+            'price'=>$request->item_price,
+            'stock'=>$request->item_stock,
+            'item_description'=>$request->item_description,
         ]);
         return redirect(Route('Item.list'));
 
@@ -77,8 +82,11 @@ class ItemController extends Controller
 
         $Item->update([
             'name'=>$request->name,
-            'image'=>$request->image,
+            'image'=>$item_image,
             'type'=>$request->type,
+            'price'=>$request->item_price,
+            'stock'=>$request->item_stock,
+            'item_description'=>$request->item_description,
             
 
         ]);

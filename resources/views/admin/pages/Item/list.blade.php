@@ -12,6 +12,10 @@
       <th scope="col">Name</th>
       <th scope="col">Item Image</th>
       <th scope="col">Category</th>
+      <th scope="col">Item Price</th>
+      <th scope="col">Item Stock</th>
+      <th scope="col">Item Status</th>
+      <th scope="col">Item Description</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,6 +27,10 @@
       <td>
         <img style="height: 80px;width:80px;" src="{{url('/uploads/Item/',$item->image)}}" alt=" image">
       </td>
+      <td>{{$item->price}} .BDT</td>
+      <td>{{$item->stock}}</td>
+      <td>{{$item->status}}</td>
+      <td>{{$item->product_description}}</td>
       <td>{{$item->type}}</td>
       <td>
         <a class ="btn btn-success btn-sm" href="#">View</a>
