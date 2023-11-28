@@ -24,7 +24,7 @@ class ItemController extends Controller
 
 
     public function store(Request $request){
-
+        // dd($request->all());
         $validate=Validator::make($request->all(),[
              'name'=>'required',
              'type'=>'required',
@@ -42,48 +42,53 @@ class ItemController extends Controller
         
         }
 
-        $item_image='';
+        $item_image=null;
         
         if($request->hasFile('image'))
         {
             $image=$request->file('image');
             $item_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
-            $image->storeAs('/Item',$item_image);
+            $image->storeAs('/Item',$image);
         }
 
 
         Item::create([
             'name'=>$request->name,
-            'image'=>$item_image,
+            'item_image'=>$item_image,
             'type'=>$request->type,
-            'price'=>$request->item_price,
-            'stock'=>$request->item_stock,
+            'price'=>$request->price,
+            'stock'=>$request->stock,
             'item_description'=>$request->item_description,
         ]);
-        return redirect(Route('Item.list'));
+        return redirect()->route('Item.list');
 
 
     }
     public function edit($id){
         $Item=Item::find($id);
-        return view('admin.pages.Item.edit',compact('Item'));
+        $categories = Category::all();
+        return view('admin.pages.Item.edit',compact('Item', 'categories'));
     }
     public function update(Request $request,$id)
     {
+        $item=Item::find($id);
 
         $Item=Item::find($id);
 
+        $item_image=$item->image;
+        // dd($item_image);
         if($request->hasfile('image')){
             $image=$request->file('image');
             $item_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
             $image->storeAs('/Item',$item_image);
 
         }
+        
 
         $Item->update([
-            'name'=>$request->name,
+            'name'=>$request->item_name,
             'image'=>$item_image,
-            'type'=>$request->type,
+            'type'=>$request->category_id,
             'price'=>$request->item_price,
             'stock'=>$request->item_stock,
             'item_description'=>$request->item_description,

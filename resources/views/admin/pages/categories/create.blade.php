@@ -13,11 +13,11 @@
                 <input required type="text" class="form-control" name="category_name">
             </div>  
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="InputCategoriesImage">Categories image </label>
                 <input type="file" class="form-control" name="image" id="InputCategoriesimage" aria-describedby="emailHelp" placeholder="Enter your name">
                 <small id="emailHelp" class="form-text text-muted">add image</small>
-              </div>
+              </div> --}}
 
             
             <div class="mb-3">

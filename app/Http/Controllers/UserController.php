@@ -42,7 +42,9 @@ public function logout(){
 }
 
 
-
+public function profile(){
+    return view('admin.pages.profile.profile');
+}
 
 
 

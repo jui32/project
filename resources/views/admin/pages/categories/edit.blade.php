@@ -10,19 +10,19 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" name="name"class="form-label">Category Name</label>
-                <input type="text" class="form-control" name="category_name" value="{{$category->category_name}}">
+                <input type="text" class="form-control" name="category_name" value="{{$category_data->category_name}}">
             </div>  
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="InputCategoriesImage">Categories image </label>
                 <input type="file" class="form-control" name="image" id="InputCategoriesimage" aria-describedby="emailHelp" placeholder="Add image">
                 <small id="emailHelp" class="form-text text-muted">add image</small>
-              </div>
+              </div> --}}
 
             
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enter Category Description:</label>
-                <input type="text" class="form-control" name="category_description" value="{{$category->category_description}}" >
+                <input type="text" class="form-control" name="category_description" value="{{$category_data->category_description}}" >
             </div>  
             
             <button type="submit" class="btn btn-primary">Update</button>

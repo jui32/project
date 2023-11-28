@@ -13,9 +13,9 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
   <div class="navbar-nav ms-auto py-0 pe-4">
   <a href="index.html" class="nav-item nav-link active">Home</a>
+  <a href="{{route('front_item')}}" class="nav-item nav-link active">Item</a>
   <a href="about.html" class="nav-item nav-link">About</a>
   <a href="service.html" class="nav-item nav-link">Service</a>
-  <a href="menu.html" class="nav-item nav-link">Menu</a>
   <div class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
     <div class="dropdown-menu m-0">
@@ -29,22 +29,36 @@
 </div>
 </div>
 
+<a class="btn btn-outline-light" href="{{route('cart.view')}}">
+  <i class="bi-cart-fill me-1"></i>
+  Cart
+  <span class="badge bg-dark text-white ms-1 rounded-pill">
+      @if(session()->has('vcart'))
+          {{ count(session()->get('vcart')) }}
+      @else
+      0
+      @endif
+  </span>
+</a>
+
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
-  Login
-</button>
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Registration
-</button>
+@if (auth('customer')->user())
+  <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li>
+  <a href="{{ route('customer.logout') }}">Logout</a>
+  @else
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
+    Login
+  </button>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Registration
+  </button>
+  @endif
 
   </nav>
  
   <!-- End Header-->
-
 
   <!-- Modal -->
 <div class="modal fade" id="exampleModal_1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

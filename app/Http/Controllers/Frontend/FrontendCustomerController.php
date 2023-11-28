@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendCustomerController extends Controller
 {
@@ -34,7 +35,7 @@ class FrontendCustomerController extends Controller
             'email'=>'required',
             'password'=>'required']);
 
-            return redirect()->route('customer.profile');
+            // return redirect()->route('customer.profile');
 
             if($validate->fails())
             {
@@ -45,11 +46,13 @@ class FrontendCustomerController extends Controller
             $credentials=$request->except('_token');
             // dd($credentials);
     
-            if(auth()->attempt($credentials))
+            if(auth()->guard('customer')->attempt($credentials))
             {
+               
                 //notify()->success('Login Success.');
                 return redirect()->route('home');
             }
+           
     
             //notify()->error('Invalid Credentials.');
                 return redirect()->back();
@@ -59,7 +62,7 @@ class FrontendCustomerController extends Controller
 
     public function logout()
     {
-        auth()->logout();
+        auth('customer')->logout();
         notify()->success('Logout Success.');    
         return redirect()->route('home');
     }

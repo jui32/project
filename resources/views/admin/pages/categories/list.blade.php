@@ -10,23 +10,19 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">Category Name</th>
-      <th scope="col">Category image</th>
-      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($category_data as $item)
+    @foreach ($category_data as $key=>$category_data)
+    {{-- @foreach($category_data as $item) --}}
     <tr>
-      <th scope="row">{{$item->id}}</th>
-      <td>{{$item->category_name}}</td>
+      <th scope="row">{{$category_data->id}}</th>
+      <td>{{$category_data->category_name}}</td>
+      <td>{{$category_data->category_description}}</td>
       <td>
-        <img style="height: 80px;width:80px;" src="{{url('/uploads/categories/',$item->image)}}" alt="no image">
-      </td>
-      <td>{{$item->category_description}}</td>
-      <td>
-        <a class ="btn btn-success btn-sm" href="">Edit</a>
-        <a class ="btn btn-danger btn-sm" href="{{route('category.delete',$item->id)}}">Delete</a>
+        <a class ="btn btn-primary btn-sm" href="{{route('category.edit',$category_data->id)}}">Edit</a>
+        <a class ="btn btn-danger btn-sm" href="{{route('category.delete',$category_data->id)}}">Delete</a>
         <a class ="btn btn-primary btn-sm" href="#">View</a>
       </td>
     </tr>

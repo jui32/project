@@ -27,11 +27,12 @@
       <td>
         <img style="height: 80px;width:80px;" src="{{url('/uploads/Item/',$item->image)}}" alt=" image">
       </td>
+      <td>{{$item->type}}</td>
       <td>{{$item->price}} .BDT</td>
       <td>{{$item->stock}}</td>
       <td>{{$item->status}}</td>
-      <td>{{$item->product_description}}</td>
-      <td>{{$item->type}}</td>
+      <td>{{$item->item_description}}</td>
+      
       <td>
         <a class ="btn btn-success btn-sm" href="#">View</a>
         <a class ="btn btn-danger btn-sm" href="{{route('Item.delete',$item->id)}}">Delete</a>

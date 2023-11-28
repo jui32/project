@@ -8,14 +8,15 @@ use App\Http\controllers\ItemController;
 use App\Http\controllers\OrderController;
 use App\Http\controllers\CustomerController;
 use App\Http\controllers\DeliveryController;
+
+
+
+
+
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\controllers\Frontend\FrontendController;
 use App\Http\controllers\Frontend\FrontendCustomerController;
-
-
-
-
-
-
+use App\Http\Controllers\Frontend\FrontendItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,15 +33,22 @@ use App\Http\controllers\Frontend\FrontendCustomerController;
 
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
-
+Route::get('/front_item',[FrontendItemController::class,'showlist'])->name('front_item');
 
 Route::get('/customer/register',[FrontendCustomerController::class,'register'])->name('customer.register');
 Route::post('/customer/doregister', [FrontendCustomerController::class, 'doRegister'])->name('customer.doregister');
 Route::get('/cutomer/login', [FrontendCustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/dologin', [FrontendCustomerController::class, 'doLogin'])->name('customer.dologin');
-Route::get('/customer/profile', [FrontendCustomerController::class, 'showProfile'])->name('customer.profile');
-
 Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
+// Route::get('/customer/profile', [FrontendCustomerController::class, 'showProfile'])->name('customer.profile');
+
+//cart routes here
+Route::get('/cart-view',[CartController::class,'viewCart'])->name('cart.view');
+Route::get('/add-to-cart/{product_id}',[CartController::class,'addToCart'])->name('add.toCart');
+
+
+
+
 
 Route::group(['middleware' => 'auth'], function () {
 });
@@ -56,7 +64,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 Route::group(['middleware'=>'auth'],function(){
 Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
-
+Route::get('/profile',[UserController::class,'profile'])->name('profie.view');
 
 //all admin panel routes
     
@@ -80,7 +88,7 @@ Route::get('/Item/list',[ItemController::class,'list'])->name('Item.list');
 Route::get('/Item/create',[ItemController::class,'create'])->name('Item.create');
 Route::post('/Item/store',[ItemController::class,'store'])->name('Item/store');
 Route::get('/Item/edit/{id}', [ItemController::class, 'edit'])->name('Item.edit');
-Route::post('/Item/update/{id}', [ItemController::class, 'edit'])->name('Item.update');
+Route::post('/Item/update/{id}', [ItemController::class, 'update'])->name('Item.update');
 Route::get('/Item/delete/{id}', [ItemController::class, 'delete'])->name('Item.delete');
 
 

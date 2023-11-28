@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->double('price');
-            $table->string('status')->default('active');
-            $table->integer('stock')->default(10);
             $table->string ('type');
+            $table->double('price');
+            $table->integer('stock')->default(10);
+            $table->string('status')->default('active');
             $table->string('item_description');
             $table->timestamps();
             // $table->id();

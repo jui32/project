@@ -31,28 +31,25 @@ class CategoryController extends Controller
         $validate=Validator::make($request->all(),[
             'category_name'=>'required',
             'category_description'=>'required',
-            'image'=>'required',
         ]);
         if ($validate->fails()){
             notify()->error('Validation Failed!');
             return redirect()->back();
         }
 
-       if($request->hasFile('image'))
-       {
-        $image=$request->file('image');
-        //dd($image);
-        $category_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-        $image->storeAs('/categories',$category_image);
+    //    if($request->hasFile('image'))
+    //    {
+    //     $image=$request->file('image');
+    //     //dd($image);
+    //     $category_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
+    //     $image->storeAs('/categories',$category_image);
 
-       }
-
+    //    }
     //    dd($request->all());
 
 
         Category::create([
             'category_name'=>$request->category_name,
-            'image'=>$category_image,
             'category_description'=>$request->category_description,
         ]);
         notify()->success('Category Added Successfully.');
@@ -72,17 +69,16 @@ class CategoryController extends Controller
         $category_data=Category::find($id);
         //$category_image='';
         
-        if($request->hasFile('image')){
-            $image=$request->file('image');
-            // dd($image);
-            $category_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-            $image->storeAs('/categories',$category_image);
+        // if($request->hasFile('image')){
+        //     $image=$request->file('image');
+        //     // dd($image);
+        //     $category_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
+        //     $image->storeAs('/categories',$category_image);
             
-        }
+        // }
         
          $category_data->update([
             'category_name'=>$request->category_name,
-             'image'=>$request->image,
              'category_description'=>$request->category_description,
             ]);
             notify()->success('category Updated Successfully.');
