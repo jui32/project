@@ -1,6 +1,4 @@
 <!-- Header-->
-
-
 <div class="container-xxl position-relative p-0">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
   <a href class="navbar-brand p-0">
@@ -12,9 +10,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
   <div class="navbar-nav ms-auto py-0 pe-4">
-  <a href="index.html" class="nav-item nav-link active">Home</a>
+  <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
   <a href="{{route('front_item')}}" class="nav-item nav-link active">Item</a>
-  <a href="about.html" class="nav-item nav-link">About</a>
+  <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
   <a href="service.html" class="nav-item nav-link">Service</a>
   <div class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>

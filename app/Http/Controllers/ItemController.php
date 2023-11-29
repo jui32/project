@@ -36,7 +36,6 @@ class ItemController extends Controller
 
         if ($validate->fails()){
             
-            notify()->error('Validation failed.');
             return redirect()->back();
         
         
@@ -48,13 +47,13 @@ class ItemController extends Controller
         {
             $image=$request->file('image');
             $item_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
-            $image->storeAs('/Item',$image);
+            $image->storeAs('/Item',$item_image);
         }
 
 
         Item::create([
             'name'=>$request->name,
-            'item_image'=>$item_image,
+            'image'=>$item_image,
             'type'=>$request->type,
             'price'=>$request->price,
             'stock'=>$request->stock,
@@ -73,7 +72,7 @@ class ItemController extends Controller
     {
         $item=Item::find($id);
 
-        $Item=Item::find($id);
+        // $Item=Item::find($id);
 
         $item_image=$item->image;
         // dd($item_image);
@@ -85,7 +84,7 @@ class ItemController extends Controller
         }
         
 
-        $Item->update([
+        $item->update([
             'name'=>$request->item_name,
             'image'=>$item_image,
             'type'=>$request->category_id,
@@ -95,7 +94,7 @@ class ItemController extends Controller
             
 
         ]);
-        notify()->success('Category Updated Successfully.');
+        notify()->success('Item Updated Successfully.');
 
         return redirect(Route('Item.list'));
     }
@@ -107,7 +106,7 @@ class ItemController extends Controller
         {
             $Item->delete();
         }
-        notify()->success('Category Deleted Successfully.');
+        notify()->success('Item Deleted Successfully.');
         return redirect()->back();
     }
 

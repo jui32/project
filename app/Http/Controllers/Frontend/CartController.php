@@ -20,7 +20,9 @@ class CartController extends Controller
         $Item=Item::find($iId);
 
         $cart=session()->get('vcart');
-        if($cart){//not empty
+        if($cart)
+        {
+            //not empty
 
             if(array_key_exists($iId,$cart)){//yes
                 //qty update
@@ -68,7 +70,7 @@ class CartController extends Controller
 
 
 
-        return view('frontend.pages.cart');
+        return view('frontend.front_pages.cart');
     }
 }
 

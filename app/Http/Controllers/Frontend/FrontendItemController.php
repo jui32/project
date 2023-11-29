@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Item;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class FrontendItemController extends Controller
 {
     public function showlist(){
-        return view('frontend.front_pages.Item.Item');
+
+        $items = Item::all();
+        $categories = Category::all();
+
+        return view('frontend.front_pages.Item.Item', compact('items','categories'));
     }
 }

@@ -16,6 +16,6 @@ class FrontendController extends Controller
 
 
         // dd($items->toarray());        
-        return view('frontend.front_pages.master', compact('items','categories'));
+        return view('frontend.front_includes.home', compact('items','categories'));
     }
 }

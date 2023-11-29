@@ -44,7 +44,7 @@ Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('cust
 
 //cart routes here
 Route::get('/cart-view',[CartController::class,'viewCart'])->name('cart.view');
-Route::get('/add-to-cart/{product_id}',[CartController::class,'addToCart'])->name('add.toCart');
+Route::get('/add-to-cart/{item_id}',[CartController::class,'addToCart'])->name('add.toCart');
 
 
 
