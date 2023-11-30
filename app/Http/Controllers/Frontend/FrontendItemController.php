@@ -16,4 +16,13 @@ class FrontendItemController extends Controller
 
         return view('frontend.front_pages.Item.Item', compact('items','categories'));
     }
+    public function  singleItemtView($itemId)
+    {
+        
+
+        $singleItem=Item::find($itemId);
+        // dd($singleProduct->name);
+        return view('frontend.front_pages.item-view',compact('singleItem'));
+
+    }
 }

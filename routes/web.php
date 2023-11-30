@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\controllers\Frontend\FrontendController;
 use App\Http\controllers\Frontend\FrontendCustomerController;
 use App\Http\Controllers\Frontend\FrontendItemController;
+use App\Http\Controllers\Frontend\OrderController as FrontendOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +40,9 @@ Route::get('/customer/register',[FrontendCustomerController::class,'register'])-
 Route::post('/customer/doregister', [FrontendCustomerController::class, 'doRegister'])->name('customer.doregister');
 Route::get('/cutomer/login', [FrontendCustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/dologin', [FrontendCustomerController::class, 'doLogin'])->name('customer.dologin');
-Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
-// Route::get('/customer/profile', [FrontendCustomerController::class, 'showProfile'])->name('customer.profile');
+
+Route::get('/single-item/{id}', [FrontendItemController::class, 'singleItemtView'])->name('single.item');
+
 
 //cart routes here
 Route::get('/cart-view',[CartController::class,'viewCart'])->name('cart.view');
@@ -48,35 +50,48 @@ Route::get('/add-to-cart/{item_id}',[CartController::class,'addToCart'])->name('
 
 
 
+Route::group(['middleware' => 'auth'], function () {
+Route::get('/profile', [FrontendCustomerController::class, 'profile'])->name('profile.view');
+Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
+Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
+Route::get('/order-now/{item_id}',[FrontendOrderController::class,'orderNow'])->name('order.now');
+
+});
+
 
 
 Route::group(['middleware' => 'auth'], function () {
 });
 
 
-
 //login
 
-
 Route::group(['prefix'=>'admin'],function(){
+    
     Route::get('admin/login',[UserController::class,'loginform'])->name('admin.login');
     Route::post('/login-form-post',[UserController::class,'loginpost'])->name('login.post');
 
 Route::group(['middleware'=>'auth'],function(){
+
+    Route::group(['middleware' => 'checkAdmin'], function () {
+
 Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 Route::get('/profile',[UserController::class,'profile'])->name('profie.view');
-
-//all admin panel routes
-    
-    
-    
-
-    
 Route::get('/', [HomeController::class, 'home'])->name('dashboard');
+
+//users
+
+Route::get('/users', [UserController::class, 'list'])->name('users.list');
+Route::get('/users/create', [UserController::class, 'createForm'])->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+
+
+//category
 
 Route::get('/category-list',[CategoryController::class, 'list'])->name('category.list');
 Route::get('/category-create',[CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class, 'store'])->name('category.store');
+
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update/{id}', [CategoryController::class, 'edit'])->name('category.update');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
@@ -87,6 +102,7 @@ Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name
 Route::get('/Item/list',[ItemController::class,'list'])->name('Item.list');
 Route::get('/Item/create',[ItemController::class,'create'])->name('Item.create');
 Route::post('/Item/store',[ItemController::class,'store'])->name('Item/store');
+
 Route::get('/Item/edit/{id}', [ItemController::class, 'edit'])->name('Item.edit');
 Route::post('/Item/update/{id}', [ItemController::class, 'update'])->name('Item.update');
 Route::get('/Item/delete/{id}', [ItemController::class, 'delete'])->name('Item.delete');
@@ -114,10 +130,11 @@ Route::post('/Delivery/store',[DeliveryController::class,'store'])->name('Delive
 
 
 
-Route::get('/frontend_home', [FrontendHomeController::class, 'home'])->name('Frontendhome');
+// Route::get('/frontend_home', [FrontendHomeController::class, 'home'])->name('Frontendhome');
 
 
 
 
+});
 });
 });

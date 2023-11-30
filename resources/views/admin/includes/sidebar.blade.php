@@ -38,7 +38,7 @@
                 <a class="nav-link" href="{{route('Item.list')}}"  data-target="#collapseTwo"
                      aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Item<span>
+                    <span>Items<span>
                 </a>
             </li>
         
@@ -46,18 +46,26 @@
                 <a class="nav-link" href="{{route('order.list')}}"  data-target="#collapseTwo"
                      aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Order<span>
+                    <span>Orders<span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('Customer.list')}}"  data-target="#collapseTwo"
                      aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Customer<span>
+                    <span>Customers<span>
                 </a>
             </li>
-            
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('users.list')}}"  data-target="#collapseTwo"
+                     aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Users<span>
+                </a>
+            </li>
+
+            
                <!-- Report -->
 
             <li class="nav-item">

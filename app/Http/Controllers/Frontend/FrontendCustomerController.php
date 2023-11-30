@@ -14,6 +14,12 @@ class FrontendCustomerController extends Controller
     public function register(){
         return view('frontend.front_pages.registration');
     }
+
+    public function profile()
+    {
+        // $orders=Order::where('user_id',auth()->user()->id)->get();
+        return view('frontend.front_pages.profile');
+    }
     
    public function doRegister(Request $request){
     Customer::create([

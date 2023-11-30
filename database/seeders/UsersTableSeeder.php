@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,10 @@ class UserTableSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name'=> 'Jui',
-            'email'=>'meherjui47@gmail.com',
-            'password'=>bcrypt('123456')
+            'name'=>'admin',
+            'role'=>'admin',
+            'email'=>'admin@gmail.com',
+            'password'=>bcrypt('123456'),
         ]);
     }
 }

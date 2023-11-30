@@ -42,8 +42,11 @@
 
 <!-- Button trigger modal -->
 @if (auth('customer')->user())
-  <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li>
-  <a href="{{ route('customer.logout') }}">Logout</a>
+  {{-- <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li> --}}
+  <a href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
+
+  <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
+
   @else
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
     Login

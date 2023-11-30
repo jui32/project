@@ -26,15 +26,38 @@
 @foreach ($items as $item)
 <div class="gallery">
 <a target="_blank" href="img/img1.jpg">
+
+    <a href="{{route('single.item',$item->id)}}">
     <img src="{{ asset('uploads/Item/' . $item->image) }}" alt="Cinque Terre" width="800"
         height="400">
-        <br>Name: <b>{{$item->name}}</b>
-        {{-- <br>Type: <b>{{$item->type}}</b> --}}
-        <br>Type: <b>{{collect($categories)->where('id', $item->type)->pluck('category_name')->first();}}</b>
+        {{-- <br>Name: <b>{{$item->name}}</b> --}}
+        <h5 class="fw-bolder">{{$item->name}}</h5>
+        <div class="d-flex justify-content-center small text-warning mb-2">
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+        </div>
+       {{-- <br>Type: <b>{{$item->type}}</b> --}}
+        {{ $item->price }} .BDT 
+       <br>Type: <b>{{collect($categories)->where('id', $item->type)->pluck('category_name')->first();}}</b>
        </a>
-       <a class="btn btn-danger p-0" href="{{ route('add.toCart',$item->id) }}">AddToCart</a>
-<div class="desc">Add a description of the image here</div>
+       {{-- <a class="btn btn-danger p-0" href="{{ route('add.toCart',$item->id) }}">AddToCart</a> --}}
+{{-- <div class="desc">Add a description of the image here</div> --}}
+
+ <!-- Product actions-->
+ <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+    <div class="text-center mb-1">
+        <a class="btn btn-danger p-0" href="{{ route('add.toCart',$item->id) }}">AddToCart</a>
+    </div> 
+    {{-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('add.toCart',$item->id)}}">Add to cart</a></div> --}}
+    <div class="text-center">
+        <a class="btn btn-outline-dark mt-auto" href="{{route('buy.now',$item->id)}}">Buy Now</a>
+    </div>
 </div>
+</div>
+
 @endforeach
 
 </div>
