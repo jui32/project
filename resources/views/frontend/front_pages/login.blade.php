@@ -3,8 +3,9 @@
 
 @section('content')
 
-<form action="{{route('customer.do.login')}}" method="post">
-    @csrf
+<form action="{{route('customer.dologin')}}" method="post">
+  @csrf
+<div class="modal-body">
 
 
   <div class="form-group">

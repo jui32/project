@@ -23,10 +23,10 @@
                 {{-- <label for="exampleInputEmail1" class="form-label">Type</label>
                 <input type="text" class="form-control" name="type"> --}}
                 <label for="">Select Category:</label>
-                <select required class="form-control" name="type" id="">
+                <select required class="form-control" name="category" id="">
              
                  @foreach ($categories as $cat )
-                 <option value="{{$cat->category_name}}">{{$cat->category_name}}</option>
+                 <option value="{{$cat->id}}">{{$cat->category_name}}</option>
                  @endforeach
                 
                 </select>

@@ -20,6 +20,7 @@
     </tr>
   </thead>
   <tbody>
+    {{-- @dd($Item_data) --}}
     @foreach($Item_data as $item)
     <tr>
       <th scope="row">{{$item->id}}</th>
@@ -27,7 +28,7 @@
       <td>
         <img style="height: 80px;width:80px;" src="{{url('/uploads/Item/',$item->image)}}" alt=" image">
       </td>
-      <td>{{$item->type}}</td>
+      <td>{{$item->cat->category_name}}</td>
       <td>{{$item->price}} .BDT</td>
       <td>{{$item->stock}}</td>
       <td>{{$item->status}}</td>

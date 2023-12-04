@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Category;
-
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,6 +15,18 @@ class CategoryController extends Controller
         $category_data=Category::all();
         return view('admin.pages.categories.list',compact('category_data'));
     }
+
+
+    public function view($id){
+        $item= Item::find($id);
+
+        $category_data= Category::all();
+
+        return view('admin.pages.Category.view', compact('category_data','item'));
+
+    }
+
+
 
 
 

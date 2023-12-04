@@ -10,7 +10,8 @@ use App\Models\Category;
 class ItemController extends Controller
 {
     public function list(){
-        $Item_data=Item::all();
+        $Item_data=Item::with('cat')->get();
+        // $Item_data=Item::with(['category']);
         return view ('admin.pages.Item.list',compact('Item_data'));
         
     }
@@ -27,7 +28,7 @@ class ItemController extends Controller
         // dd($request->all());
         $validate=Validator::make($request->all(),[
              'name'=>'required',
-             'type'=>'required',
+             'category'=>'required',
              'price'=>'required',
              'stock'=>'required',
              'item_description'=>'required',
@@ -54,7 +55,7 @@ class ItemController extends Controller
         Item::create([
             'name'=>$request->name,
             'image'=>$item_image,
-            'type'=>$request->type,
+            'category_id'=>$request->category,
             'price'=>$request->price,
             'stock'=>$request->stock,
             'item_description'=>$request->item_description,
@@ -87,7 +88,6 @@ class ItemController extends Controller
         $item->update([
             'name'=>$request->item_name,
             'image'=>$item_image,
-            'type'=>$request->category_id,
             'price'=>$request->item_price,
             'stock'=>$request->item_stock,
             'item_description'=>$request->item_description,

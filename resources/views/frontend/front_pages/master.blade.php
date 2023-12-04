@@ -3,6 +3,14 @@
 
  <head>
      <meta charset="utf-8">
+     @notifyCss
+     <style>
+.notify{
+    z-index: 1000000;
+}
+
+
+     </style>
      <title>Restaurant - Bootstrap Restaurant Template</title>
      <meta content="width=device-width, initial-scale=1.0" name="viewport">
      <meta content name="keywords">
@@ -60,6 +68,9 @@
  </head>
 
  <body>
+
+
+    <x-notify::notify/>
      <div class="container-xxl bg-white p-0">
 
          {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -75,7 +86,20 @@
 
          <!-- End Header-->
 
-
+  <!-- Header-->
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Search your product(s)</h1>
+            
+            <form action="{{route('item.search')}}" method="get">
+                <input type="text" class="form-control" placeholder="Search..." name="search">
+                <button type="submit" class="btn btn-success">Search</button>
+            </form>
+           
+        </div>
+    </div>
+</header>
 
          <!-- main-->
 
@@ -110,7 +134,7 @@
      <script src="https://demo.htmlcodex.com/2098/bootstrap-restaurant-template/js/main.js" type="b60ffd3d09ef56297ef866dd-text/javascript"></script>
      <script src="https://demo.htmlcodex.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
          data-cf-settings="b60ffd3d09ef56297ef866dd-|49" defer></script>
-
+         @notifyJs
  </body>
 
  </html>

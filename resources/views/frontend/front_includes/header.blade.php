@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
   <div class="navbar-nav ms-auto py-0 pe-4">
   <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
-  <a href="{{route('front_item')}}" class="nav-item nav-link active">Item</a>
+  <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
   <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
   <a href="service.html" class="nav-item nav-link">Service</a>
   <div class="nav-item dropdown">
@@ -46,7 +46,7 @@
   <a href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
 
   <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
-
+  <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('profile.view') }}">Profile</a>
   @else
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
     Login

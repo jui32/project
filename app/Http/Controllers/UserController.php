@@ -31,9 +31,7 @@ if($login){
 
 }
 
-// if(auth()->attempt($credential)){
-//     return redirect ()->route('home');
-// }
+
 
 return redirect ()->back();
     }
@@ -55,16 +53,12 @@ public function list(){
     return view('admin.pages.users.list',compact('users'));
 }
 
+
 public function createForm()
 {
     return view('admin.pages.users.create');
 }
 
-// Example in User.php model
-// public function isAdmin()
-// {
-//     return $this->role=== 'admin'; // Adjust the condition based on your user roles setup
-// }
 
 public function store(Request $request)
 {
@@ -80,13 +74,13 @@ public function store(Request $request)
         return redirect()->back()->with('myError',$validate->getMessageBag());
     }
 
-    $fileName=null;
-    if($request->hasFile('user_image'))
+    $user_image=null;
+    if($request->hasFile('image'))
     {
-        $file=$request->file('user_image');
-        $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $image=$request->file('image');
+        $user_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
        
-        $file->storeAs('/uploads',$fileName);
+        $image->storeAs('/uploads/user',$user_image);
 
     }
 
@@ -94,7 +88,7 @@ public function store(Request $request)
     User::create([
         'name'=>$request->user_name,
         'role'=>$request->role,
-        'image'=>$fileName,
+        'image'=>$user_image,
         'email'=>$request->user_email,
         'password'=>bcrypt($request->user_password),
     ]);
@@ -103,8 +97,60 @@ public function store(Request $request)
 
 
 }
+public function delete($id)
+{
+  $users=User::find($id);
+  if($users)
+  {
+    $users->delete();
+  }
+
+  notify()->success('User Deleted Successfully.');
+  return redirect()->back();
+}
+
+public function edit($id)
+{
+  $users=User::find($id);
+
+  return view('admin.pages.users.edit',compact('users'));
+ 
+}
+
+public function update(Request $request,$id)
+{
+    $users=User::find($id);
+
+    if($users)
+    {
+
+      $user_image=$users->image;
+          if($request->hasFile('image'))
+          {
+              $image=$request->file('image');
+              $user_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
+             
+              $image->storeAs('/uploads/user',$user_image);
+      
+          }
+
+      }
+
+      $users->update([
+        'name'=>$request->user_name,
+        'role'=>$request->role,
+        'image'=>$user_image,
+        'email'=>$request->user_email,
+        'password'=>bcrypt($request->user_password)
+    
+    ]);
+    return redirect()->back();
+    }
+}
+
+
+
 
 
  
-    
-}
+

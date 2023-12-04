@@ -1,45 +1,56 @@
 @extends('frontend.front_pages.master')
 @section('content')
-
-<div class="container">
-
-@foreach($items as $Item)
-<div class='container-fluid'>
-        <div class="card mx-auto col-md-3 col-10 mt-5">
-        <img style="height:270px; width:270px;" src="{{url('uploads/Item', $Item->image)}}" alt="image">
-
-            <div class="card-body text-center mx-auto">
-                <div class='cvp'>
-
-                    <h5 class="card-title font-weight-bold">{{ $Item->name}}</h5>
-                    <p class="card-text">{{ $Item->price}}.BDT</p>
-                    <a href="#" class="btn details px-auto">view details</a><br />
-                    <a href="#" class="btn cart px-auto">Add To Cart</a>
+    <div class="container">
+        <div class="row">
+            @foreach ($items as $item)
+            <div class="col-3 mt-3">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
+                    </div>
+                    <!-- Product image-->
+    
+                    <a href="{{ route('single.item', $item->id) }}">
+                        <img class="card-img-top" src="{{ url('uploads/Item/' . $item->image) }}" alt="...">
+                       
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">{{ $item->name }}</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                {{-- <br>Type: <b>{{$item->type}}</b> --}}
+                                {{ $item->price }} .BDT
+                                <br>Category: <b>{{$item->cat->category_name}}</b>
+                                <b>{{ collect($categories)->where('id', $item->category)->pluck('category_name')->first() }}</b>
+                            </div>
+                        </div>
+                    </a>
+    
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center mb-1">
+                            <a class="btn btn-danger p-0" href="{{ route('add.toCart', $item->id) }}">AddToCart</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="{{ route('buy.now', $item->id) }}">Buy
+                                Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input type="text" class="form-control" name="type"> 
-                <label for="">Select Category:</label>
-                <select required class="form-control" name="type" id="">
-             
-                 @foreach ($categories as $cat )
-                 <option value="{{$cat->category_name}}">{{$cat->category_name}}</option>
-                 @endforeach
-                
-                </select>
-            </div>  
+       
         </div>
+        @endforeach    
+            
+        </div>
+    
+
 
     </div>
-
-@endforeach
-
-
-</div>
-
 @endsection
-
-{{-- sohag --}}
-
-

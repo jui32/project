@@ -11,10 +11,10 @@ class FrontendItemController extends Controller
 {
     public function showlist(){
 
-        $items = Item::all();
-        $categories = Category::all();
+        $items = Item::with('cat')->get();
+        // $categories = Category::all();
 
-        return view('frontend.front_pages.Item.Item', compact('items','categories'));
+        return view('frontend.front_pages.Item.Item', compact('items'));
     }
     public function  singleItemtView($itemId)
     {

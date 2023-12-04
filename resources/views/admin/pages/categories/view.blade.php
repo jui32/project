@@ -1,4 +1,4 @@
-@extends('frontend.front_pages.master')
+@extends('admin.pages.master')
 
 
 @section('content')
@@ -16,11 +16,8 @@
                         <div class="ms-1"> <span>{{$singleItem->description}}</span> </div>
                         <div class="ms-1"> <span>{{$singleItem->price}} BDT</span> </div>
                         <div class="mt-5 radio-buttons"> <label class="radio"> <input type="radio" name="code" value="grey" checked> <span></span> </label> <label class="radio"> <input type="radio" name="code" value="pink"> <span></span> </label> <label class="radio"> <input type="radio" name="code" value="black"> <span></span> </label> </div>
-                        <div> <button class="button"> <span>Add to Cart</span> <i class="ms-2 fa fa-long-arrow-right"></i> </button> </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="item-image"> <img src="{{url('/uploads/Item/'.$singleItem->image)}}"> </div>
-                        {{-- ('uploads/Item', $Item->image) --}}
                     </div>
                 </div>
             </div>

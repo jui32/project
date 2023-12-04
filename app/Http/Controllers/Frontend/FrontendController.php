@@ -18,4 +18,17 @@ class FrontendController extends Controller
         // dd($items->toarray());        
         return view('frontend.front_includes.home', compact('items','categories'));
     }
+    public function search (request $request)
+    {
+        // dd(request()->all());
+        if($request->search)
+        {
+            $items=Item::where('name','LIKE','%'.$request->search.'%')->get();
+            //select * from items where name like % Burger %;
+        }
+        else{
+            $items=Item::all();
+        }
+        return view("frontend.front_pages.search",compact('items'));
+    }
 }

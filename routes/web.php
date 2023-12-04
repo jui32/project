@@ -34,6 +34,7 @@ use App\Http\Controllers\Frontend\OrderController as FrontendOrderController;
 
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/search-item',[FrontendController::class,'search'])->name('item.search');
 Route::get('/front_item',[FrontendItemController::class,'showlist'])->name('front_item');
 
 Route::get('/customer/register',[FrontendCustomerController::class,'register'])->name('customer.register');
@@ -51,6 +52,7 @@ Route::get('/add-to-cart/{item_id}',[CartController::class,'addToCart'])->name('
 
 
 Route::group(['middleware' => 'auth'], function () {
+Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
 Route::get('/profile', [FrontendCustomerController::class, 'profile'])->name('profile.view');
 Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
 Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
@@ -85,15 +87,23 @@ Route::get('/users', [UserController::class, 'list'])->name('users.list');
 Route::get('/users/create', [UserController::class, 'createForm'])->name('users.create');
 Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
 
+Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
+Route::get('/users/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
+
+
+
 
 //category
 
 Route::get('/category-list',[CategoryController::class, 'list'])->name('category.list');
+Route::get('/category/view/{id}',[CategoryController::class, 'view'])->name('category.view');
+
 Route::get('/category-create',[CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class, 'store'])->name('category.store');
 
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
-Route::post('/category/update/{id}', [CategoryController::class, 'edit'])->name('category.update');
+Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 
 

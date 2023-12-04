@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class FrontendCustomerController extends Controller
 
     public function profile()
     {
-        // $orders=Order::where('user_id',auth()->user()->id)->get();
+         $orders=Order::where('user_id',auth()->user()->id)->get();
         return view('frontend.front_pages.profile');
     }
     
@@ -41,13 +42,14 @@ class FrontendCustomerController extends Controller
             'email'=>'required',
             'password'=>'required']);
 
-            // return redirect()->route('customer.profile');
+             return redirect()->route('customer.profile');
 
             if($validate->fails())
-            {
-                //notify()->error($val->getMessageBag());
-                return redirect()->back();
-            }
+        {
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+        }
+
     
             $credentials=$request->except('_token');
             // dd($credentials);
@@ -55,12 +57,12 @@ class FrontendCustomerController extends Controller
             if(auth()->guard('customer')->attempt($credentials))
             {
                
-                //notify()->success('Login Success.');
+                notify()->success('Login Success.');
                 return redirect()->route('home');
             }
            
     
-            //notify()->error('Invalid Credentials.');
+            notify()->error('Invalid Credentials.');
                 return redirect()->back();
     
     

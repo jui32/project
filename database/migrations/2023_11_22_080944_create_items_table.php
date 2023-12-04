@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string ('type');
+            $table->foreignId('categroy_id')->constrained('categories')->cascadeOnDelete();
             $table->double('price');
             $table->integer('stock')->default(10);
             $table->string('status')->default('active');

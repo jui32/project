@@ -19,16 +19,17 @@
     @foreach ($users as $key=>$singleUser)
     <tr>
         <td>{{$key+1}}</td>
+        <th scope="row">{{$singleUser->id}}</th>
         <td>{{$singleUser->name}}</td>
         <td>
-            <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$singleUser->image)}}" alt="">
+            <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/user'.$singleUser->image)}}" alt="">
         </td>
         <td>{{$singleUser->email}}</td>
         <td>{{$singleUser->role}}</td>
         <td>
-            <a class="btn btn-success" href="">View</a>
-            <a class="btn btn-warning" href="">Edit</a>
-            <a  class="btn btn-danger"href="">Delete</a>
+            <a class="btn btn-success" href="{{route('users.edit',$singleUser->id)}}">Edit</a>
+            <a class="btn btn-warning" href="{{route('users.delete',$singleUser->id)}}">Delete</a>
+            <a  class="btn btn-danger"href="">View</a>
         </td>
 
     </tr>

@@ -10,6 +10,7 @@ class CartController extends Controller
 {
     public function viewCart()
     {
+        // session()->flush();
         
         return view('frontend.front_pages.cart');
     }
@@ -40,6 +41,7 @@ class CartController extends Controller
                     'id'=>$iId,
                     'name'=>$Item->name,
                     'price'=>$Item->price,
+                    'image'=>$Item->image,
                     'quantity'=>1,
                     'subtotal'=>1 * $Item->price,
             ];
@@ -71,6 +73,10 @@ class CartController extends Controller
 
 
         return view('frontend.front_pages.cart');
+    }
+    public function checkout()
+    {
+        return view('frontend.front_pages.checkout');
     }
 }
 
