@@ -8,16 +8,29 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">name</th>
-      <th scope="col">type</th>
+      <th scope="col">Total price</th>
+      <th scope="col">Payment method</th>
+      <th scope="col">Address</th>
+      <th scope="col">Receiver Mobile</th>
+      <th scope="col">Receiver Name</th>
+      <th scope="col">Receiver Email</th>
+      <th scope="col">Order Note</th>
+      <th scope="col">Action</th>
+
+ 
     </tr>
   </thead>
   <tbody>
     @foreach($order_data as $item)
     <tr>
       <th scope="row">{{$item->id}}</th>
-      <td>{{$item->name}}</td>
-      <td>{{$item->type}}</td>
+      <td>{{$item->total_price}}</td>
+      <td>{{$item->payment_method}}</td>
+      <td>{{$item->address}}</td>
+      <td>{{$item->receiver_mobile}}</td>
+      <td>{{$item->receiver_name}}</td>
+      <td>{{$item->receiver_email}}</td>
+      <td>{{$item->order_note}}</td>
       <td>
         <a class ="btn btn-success btn-sm" href="#">Edit</a>
         <a class ="btn btn-danger btn-sm" href="#">Delete</a>

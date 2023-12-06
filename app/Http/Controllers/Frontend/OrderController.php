@@ -11,6 +11,7 @@ class OrderController extends Controller
 {
     public function orderPlace(Request $request)
     {
+        // dd('hi');
        
         //validation here
 
@@ -37,7 +38,7 @@ class OrderController extends Controller
             OrderDetails::create([
                 'order_id'=>$order->id,
                 // 'product_id'=>$key,
-                'product_id'=>$item['id'],
+                'item_id'=>$item['id'],
                 'quantity'=>$item['quantity'],
                 'subtotal'=>$item['subtotal'],
             ]);

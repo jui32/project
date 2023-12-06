@@ -13,7 +13,7 @@
       <th scope="col">Customer name</th>
       {{-- < thscope="col">Customer image</th> --}}
       <th scope="col">Customer email</th>
-      <th scope="col">Customer Phone Number </th>
+      <th scope="col">Role </th>
       <th scope="col">Action</th>
      </tr>
   </thead>
@@ -27,6 +27,7 @@
       </td> --}}
       <td>{{$item->email}}</td>
       <td>{{$item->password}}</td>
+      <td>{{$item->role}}</td>
       <td>
         <a class ="btn btn-success btn-sm" href="#">Edit</a>
         <a class ="btn btn-danger btn-sm" href="#">Delete</a>

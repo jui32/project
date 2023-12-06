@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id');
             $table->string('status')->default('pending');
             $table->double('total_price')->default(0.0);
             $table->string('payment_method')->default('cod');
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('receiver_name');
             $table->string('receiver_email')->nullable();
             $table->text('order_note')->nullable();
-            
             $table->timestamps();
         });
     }

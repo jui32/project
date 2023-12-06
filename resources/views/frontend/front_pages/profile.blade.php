@@ -19,9 +19,9 @@
                                 </div>
                                 <div class="userData ml-3">
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a
-                                            href="javascript:void(0);">{{ auth()->user()->name }}</a></h2>
-                                    <h6 class="d-block"><a href="javascript:void(0)">20</a> Completed Orders</h6>
-                                    <h6 class="d-block"><a href="javascript:void(0)">6</a> Pending Oders</h6>
+                                            href="javascript:void(0);">  {{auth('customer')->user()->name}} </a></h2>
+                                    <h6 class="d-block"><a href="javascript:void(0)">0</a> Completed Orders</h6>
+                                    <h6 class="d-block"><a href="javascript:void(0)">0</a> Pending Oders</h6>
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard"
@@ -49,7 +49,8 @@
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{ auth()->user()->name }}
+                                                {{-- {{ auth()->user()->name }} --}}
+                                                {{auth('customer')->user()->name}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -59,7 +60,7 @@
                                                 <label style="font-weight:bold;">Birth Date</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                March 22, 1994.
+                                                {{auth('customer')->user()->birth_date}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -70,7 +71,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{ auth()->user()->email }}
+                                                {{auth('customer')->user()->email}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -79,7 +80,7 @@
                                                 <label style="font-weight:bold;">Role</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{ auth()->user()->role }}
+                                                {{auth('customer')->user()->role}} 
                                             </div>
                                         </div>
 

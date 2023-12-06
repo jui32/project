@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form action="{{route('customer.doregister')}}" method="post">
+<form action="{{route('customer.store')}}" method="post">
     @csrf
 
 <div class="form-group">

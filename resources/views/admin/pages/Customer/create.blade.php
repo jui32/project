@@ -27,6 +27,7 @@
     <small id="emailHelp" class="form-text text-muted">Enter your email address</small>
   </div>
 
+ 
 
   <div class="form-group">
     <label for="InputCustomerNumber">Contact number </label>
@@ -42,6 +43,11 @@
     <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
   </div>
 
+  <div class="form-group">
+    <label for="InputCustomerEmail">Role </label>
+    <input type="text" class="form-control" name="role" id="InputCustomerEmail" aria-describedby="emailHelp" placeholder="Enter your role">
+    <small id="emailHelp" class="form-text text-muted">Enter your role</small>
+  </div>
 
 
   <div class="form-check">

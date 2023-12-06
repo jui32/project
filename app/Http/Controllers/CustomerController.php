@@ -22,23 +22,25 @@ class CustomerController extends Controller
         // dd($request->all());
        
 
-    //    $customer_image='';
+       $customer_image='';
 
-    //    if($request->hasFile('image')){
-    //     $image=$request->file('image');
-    //     // dd($image);
-    //     $customer_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-    //     $image->storeAs('/Customer',$customer_image);
+       if($request->hasFile('image')){
+        $image=$request->file('image');
+        // dd($image);
+        $customer_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
+        $image->storeAs('/Customer',$customer_image);
 
-    //    }
+       }
        
 
 
 
         Customer::create([
             'customername'=>$request->customername,
-            // 'image'=>$customer_image,
+            'image'=>$customer_image,
             'customeremail'=>$request->customeremail,
+            'role'=>'customer',
+            'password'=>bcrypt($request->password),
             'customernumber'=>$request->customernumber,
         ]);
         return redirect(Route('Customer.list'));

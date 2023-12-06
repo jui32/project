@@ -12,6 +12,7 @@ class ItemController extends Controller
     public function list(){
         $Item_data=Item::with('cat')->get();
         // $Item_data=Item::with(['category']);
+        // dd($Item_data);
         return view ('admin.pages.Item.list',compact('Item_data'));
         
     }
@@ -24,7 +25,8 @@ class ItemController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request->all());
         $validate=Validator::make($request->all(),[
              'name'=>'required',
@@ -33,14 +35,14 @@ class ItemController extends Controller
              'stock'=>'required',
              'item_description'=>'required',
         ]);
-
+        
 
         if ($validate->fails()){
-            
+            dd('failed');
             return redirect()->back();
-        
-        
         }
+       
+
 
         $item_image=null;
         
@@ -51,11 +53,11 @@ class ItemController extends Controller
             $image->storeAs('/Item',$item_image);
         }
 
-
+        // dd($request->all());
         Item::create([
             'name'=>$request->name,
             'image'=>$item_image,
-            'category_id'=>$request->category,
+            'categroy_id'=>$request->category,
             'price'=>$request->price,
             'stock'=>$request->stock,
             'item_description'=>$request->item_description,

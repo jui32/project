@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
-use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -18,7 +17,7 @@ class FrontendCustomerController extends Controller
 
     public function profile()
     {
-         $orders=Order::where('user_id',auth()->user()->id)->get();
+        // $orders=Order::where('user_id',auth()->user()->id)->get();
         return view('frontend.front_pages.profile');
     }
     
@@ -26,6 +25,7 @@ class FrontendCustomerController extends Controller
     Customer::create([
         'name'=>$request->name,
         'email'=>$request->email,
+        'role'=>'customer',
         'password'=>bcrypt($request->password),
     ]);
     notify()->success('Customer Registration successful.');
@@ -42,7 +42,7 @@ class FrontendCustomerController extends Controller
             'email'=>'required',
             'password'=>'required']);
 
-             return redirect()->route('customer.profile');
+            // return redirect()->route('customer.profile');
 
             if($validate->fails())
         {

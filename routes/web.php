@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminOrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\HomeController;
 use App\Http\controllers\CategoryController;
@@ -52,11 +53,17 @@ Route::get('/add-to-cart/{item_id}',[CartController::class,'addToCart'])->name('
 
 
 Route::group(['middleware' => 'auth'], function () {
+
 Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
+
+Route::post('/order-place',[FrontendOrderController::class, 'orderPlace'])->name('order.place');
+
 Route::get('/profile', [FrontendCustomerController::class, 'profile'])->name('profile.view');
 Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
-Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
+// Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
 Route::get('/order-now/{item_id}',[FrontendOrderController::class,'orderNow'])->name('order.now');
+Route::get('/cancel-order/{product_id}',[FrontendOrderController::class,'cancelOrder'])->name('order.cancel');
+
 
 });
 
@@ -122,9 +129,9 @@ Route::get('/Item/delete/{id}', [ItemController::class, 'delete'])->name('Item.d
 
 //order
 
-Route::get('/order/list',[OrderController::class,'list'])->name('order.list');
-Route::get('/order/create',[OrderController::class,'create'])->name('order.create');
-Route::post('/order/store',[OrderController::class,'store'])->name('order.store');
+Route::get('/order/list',[AdminOrderController::class,'list'])->name('order.list');
+// Route::get('/order/create',[OrderController::class,'create'])->name('order.create');
+// Route::post('/order/store',[OrderController::class,'store'])->name('order.store');
 
 //Customer
 

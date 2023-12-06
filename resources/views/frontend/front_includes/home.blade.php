@@ -61,9 +61,9 @@
         <a class="btn btn-danger p-0" href="{{ route('add.toCart',$item->id) }}">AddToCart</a>
     </div> 
     {{-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('add.toCart',$item->id)}}">Add to cart</a></div> --}}
-    <div class="text-center">
+    {{-- <div class="text-center">
         <a class="btn btn-outline-dark mt-auto" href="{{route('buy.now',$item->id)}}">Buy Now</a>
-    </div>
+    </div> --}}
 </div>
 </div>
 </div>   

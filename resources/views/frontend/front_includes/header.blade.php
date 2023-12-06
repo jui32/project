@@ -46,7 +46,7 @@
   <a href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
 
   <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
-  <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('profile.view') }}">Profile</a>
+
   @else
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
     Login
@@ -113,12 +113,20 @@
             <input type="text" name="name" class="form-control" placeholder="Enter Name">
           </div>
           <div class="mb-3">
+            <label for="">Birth Date</label>
+            <input type="text" name="birth_date" class="form-control" placeholder="Enter Birth Date">
+          </div>
+          <div class="mb-3">
             <label for="">Email</label>
             <input type="email" name="email" class="form-control" placeholder="Enter Email">
           </div>
           <div class="mb-3">
             <label for="">Password</label>
             <input type="password" name="password" class="form-control" placeholder="Enter Password">
+          </div>
+          <div class="mb-3">
+            <label for="">Role</label>
+            <input type="text" name="role" class="form-control" placeholder="Enter role">
           </div>
         </div>
       </div>

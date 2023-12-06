@@ -27,7 +27,6 @@
                                 {{-- <br>Type: <b>{{$item->type}}</b> --}}
                                 {{ $item->price }} .BDT
                                 <br>Category: <b>{{$item->cat->category_name}}</b>
-                                <b>{{ collect($categories)->where('id', $item->category)->pluck('category_name')->first() }}</b>
                             </div>
                         </div>
                     </a>
@@ -37,10 +36,10 @@
                         <div class="text-center mb-1">
                             <a class="btn btn-danger p-0" href="{{ route('add.toCart', $item->id) }}">AddToCart</a>
                         </div>
-                        <div class="text-center">
+                        {{-- <div class="text-center">
                             <a class="btn btn-outline-dark mt-auto" href="{{ route('buy.now', $item->id) }}">Buy
                                 Now</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -50,7 +49,6 @@
             
         </div>
     
-
 
     </div>
 @endsection
