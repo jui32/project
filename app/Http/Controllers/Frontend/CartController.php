@@ -78,6 +78,8 @@ class CartController extends Controller
     {
         return view('frontend.front_pages.checkout');
     }
+
+  
 }
 
 

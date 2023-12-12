@@ -50,17 +50,22 @@
                     <div class="form-group">
                         <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
                         <div class="col-md-12">
-                            <input type="text" name="zip_code" class="form-control" value="{{auth()->user()->zip_code}}" />
+                            <input type="number" name="zip_code" class="form-control" value="{{auth()->user()->zip_code}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Phone Number:</strong></div>
-                        <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="{{auth()->user()->phone_number}}" /></div>
+                        <div class="col-md-12"><input type="number" name="phone_number" class="form-control" value="{{auth()->user()->phone_number}}" /></div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Email Address:</strong></div>
-                        <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="{{auth()->user()->email}}" /></div>
+                        <div class="col-md-12"><input type="email" name="email_address" class="form-control" value="{{auth()->user()->email}}" /></div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-12"><strong>Order Note:</strong></div>
+                        <div class="col-md-12">
+                            <input type="text" name="order_note" class="form-control" value="{{auth()->user()->order_note}}" />
+                        </div>
                 </div>
             </div>
             <!--SHIPPING METHOD END-->

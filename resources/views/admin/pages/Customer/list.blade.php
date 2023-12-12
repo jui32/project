@@ -11,7 +11,8 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Customer name</th>
-      {{-- < thscope="col">Customer image</th> --}}
+      <th scope="col">Customer image</th>
+      <th scope="col">Birth Date</th>
       <th scope="col">Customer email</th>
       <th scope="col">Role </th>
       <th scope="col">Action</th>
@@ -22,9 +23,10 @@
     <tr>
       <th scope="row">{{$item->id}}</th>
       <td>{{$item->name}}</td>
-      {{-- <td>
+      <td>{{$item->birth_date}}</td>
+      <td>
         <img style="height: 80px;width:80px;" src="{{url('/uploads/customer',$item->image)}}" alt="">
-      </td> --}}
+      </td>
       <td>{{$item->email}}</td>
       <td>{{$item->password}}</td>
       <td>{{$item->role}}</td>

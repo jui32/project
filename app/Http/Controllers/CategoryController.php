@@ -27,7 +27,12 @@ class CategoryController extends Controller
     }
 
 
+    public function ItemCategory($categoryId){
+        $ItemCategory=Category::find($categoryId);
+        // dd($ItemCategory);
+        return view('frontend.front_pages.category-view',compact('ItemCategory'));
 
+    }
 
 
     public function create()

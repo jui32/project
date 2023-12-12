@@ -134,7 +134,22 @@
      <script src="https://demo.htmlcodex.com/2098/bootstrap-restaurant-template/js/main.js" type="b60ffd3d09ef56297ef866dd-text/javascript"></script>
      <script src="https://demo.htmlcodex.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
          data-cf-settings="b60ffd3d09ef56297ef866dd-|49" defer></script>
-         @notifyJs
+         @notifyJs<script>
+
+            
+            (function (window, document) {
+                var loader = function () {
+                    var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                    script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                    tag.parentNode.insertBefore(script, tag);
+                };
+        
+                window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            })(window, document);
+        </script>
+
+
+
  </body>
 
  </html>

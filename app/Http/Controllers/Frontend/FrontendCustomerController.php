@@ -15,7 +15,7 @@ class FrontendCustomerController extends Controller
         return view('frontend.front_pages.registration');
     }
 
-    public function profile()
+    public function userprofile()
     {
         // $orders=Order::where('user_id',auth()->user()->id)->get();
         return view('frontend.front_pages.profile');
@@ -24,6 +24,8 @@ class FrontendCustomerController extends Controller
    public function doRegister(Request $request){
     Customer::create([
         'name'=>$request->name,
+        // 'image'=>$image,
+        'birth_date'=>$request->birth_date,
         'email'=>$request->email,
         'role'=>'customer',
         'password'=>bcrypt($request->password),

@@ -11,13 +11,15 @@ class FrontendController extends Controller
 {
     public function home(){
 
-        $items = Item::all();
+        $items = Item::all();        
         $categories = Category::all();
+        // dd($categories);
 
 
         // dd($items->toarray());        
         return view('frontend.front_includes.home', compact('items','categories'));
-    }
+    } 
+
     public function search (request $request)
     {
         // dd(request()->all());

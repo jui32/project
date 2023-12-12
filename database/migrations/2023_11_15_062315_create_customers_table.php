@@ -15,9 +15,11 @@ return new class extends Migration
             
             $table->id();
             $table->string('name');
+            // $table->text('image')->nullable();
+            $table->string('birth_date');
             $table->string('email');
             $table->string('password');
-            $table->text('image')->nullable();
+            $table->string('role');
             $table->timestamps();
         });
     }

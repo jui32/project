@@ -35,9 +35,6 @@
 
     <a href="{{route('single.item',$item->id)}}">
     <img class="card-img-top" src="{{ url('uploads/Item/'.$item->image) }}" alt="..." > 
-        {{-- <br>Name: <b>{{$item->name}}</b> --}}
-        {{-- alt="Cinque Terre" width="600"
-        height="300" --}}
         <div class="card-body p-4">
         <div class="text-center">
             <h5 class="fw-bolder">{{$item->name}}</h5>

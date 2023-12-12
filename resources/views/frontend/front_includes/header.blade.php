@@ -10,17 +10,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
   <div class="navbar-nav ms-auto py-0 pe-4">
+  {{-- <a href="{{route('item.category')}}" class="nav-item nav-link active">Categories</a> --}}
   <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
   <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
   <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
   <a href="service.html" class="nav-item nav-link">Service</a>
   <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
     <div class="dropdown-menu m-0">
-      <a href="booking.html" class="dropdown-item">Booking</a>
-      <a href="team.html" class="dropdown-item">Our Team</a>
-      <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-      
+      @foreach ($categories as $key=>$category_data)
+      <a href="{{route('category.item',$category_data->id)}}" class="dropdown-item">{{$category_data->category_name}}</a>
+      @endforeach
     </div>
   </div>
   <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -43,7 +43,7 @@
 <!-- Button trigger modal -->
 @if (auth('customer')->user())
   {{-- <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li> --}}
-  <a href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
+  <a class="btn btn-outline-light" href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
 
   <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
 
@@ -112,6 +112,13 @@
             <label for="">Name</label>
             <input type="text" name="name" class="form-control" placeholder="Enter Name">
           </div>
+
+          {{-- <div class="mb-3">
+            <label for="InputCustomerName">Customer image </label>
+            <input type="file" class="form-control" name="image" id="InputCustomerimage" aria-describedby="emailHelp" placeholder="Enter your name">
+            <small id="emailHelp" class="form-text text-muted">add image</small>
+          </div> --}}
+
           <div class="mb-3">
             <label for="">Birth Date</label>
             <input type="text" name="birth_date" class="form-control" placeholder="Enter Birth Date">
