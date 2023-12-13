@@ -72,9 +72,12 @@ class OrderController extends Controller
        return redirect()->back();
         
     }
-    public function Payment($payment){
+    public function Payment($data){
+
+// dd($data);
+
         $post_data = array();
-        $post_data['total_amount'] = '10'; # You cant not pay less than 10
+        $post_data['total_amount'] =$data->subtotal; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
@@ -111,7 +114,7 @@ class OrderController extends Controller
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
 
-        
+        // dd($post_data);
 
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )

@@ -52,7 +52,7 @@ Route::get('/add-to-cart/{item_id}',[CartController::class,'addToCart'])->name('
 
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'checkCustomer'], function () {
 
 Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
 
@@ -62,7 +62,7 @@ Route::get('/profile', [FrontendCustomerController::class, 'userprofile'])->name
 Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
 // Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
 Route::get('/order-now/{item_id}',[FrontendOrderController::class,'orderNow'])->name('order.now');
-Route::get('/cancel-order/{product_id}',[FrontendOrderController::class,'cancelOrder'])->name('order.cancel');
+Route::get('/cancel-order/{item_id}',[FrontendOrderController::class,'cancelOrder'])->name('order.cancel');
 
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
@@ -84,8 +84,7 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 
 
-Route::group(['middleware' => 'auth'], function () {
-});
+
 
 
 //login
