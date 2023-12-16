@@ -25,46 +25,46 @@
                        
                         <div class="span1"></div>
                         <div class="col-md-6 col-xs-12">
-                            <strong> Name:</strong>
-                            <input type="text" name="name" class="form-control" value="{{auth()->user()->name}}" />
+                            <strong> Name:</strong>  
+                            <input type="text" name="name" class="form-control" value="{{auth()->guard('customer')->user()->name}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Address:</strong></div>
                         <div class="col-md-12">
-                            <input type="text" name="address" class="form-control" value="{{auth()->user()->address}}" />
+                            <input type="text" name="address" class="form-control" value="{{auth()->guard('customer')->user()->address}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>City:</strong></div>
                         <div class="col-md-12">
-                            <input type="text" name="city" class="form-control" value="{{auth()->user()->city}}" />
+                            <input type="text" name="city" class="form-control" value="{{auth()->guard('customer')->user()->city}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>State:</strong></div>
                         <div class="col-md-12">
-                            <input type="text" name="state" class="form-control" value="{{auth()->user()->state}}" />
+                            <input type="text" name="state" class="form-control" value="{{auth()->guard('customer')->user()->state}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
                         <div class="col-md-12">
-                            <input type="number" name="zip_code" class="form-control" value="{{auth()->user()->zip_code}}" />
+                            <input type="number" name="zip_code" class="form-control" value="{{auth()->guard('customer')->user()->zip}}" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Phone Number:</strong></div>
-                        <div class="col-md-12"><input type="number" name="phone_number" class="form-control" value="{{auth()->user()->phone_number}}" /></div>
+                        <div class="col-md-12"><input type="number" name="phone_number" class="form-control" value="{{auth()->guard('customer')->user()->number}}" /></div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Email Address:</strong></div>
-                        <div class="col-md-12"><input type="email" name="email_address" class="form-control" value="{{auth()->user()->email}}" /></div>
+                        <div class="col-md-12"><input type="email" name="email_address" class="form-control" value="{{auth()->guard('customer')->user()->email}}" /></div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12"><strong>Order Note:</strong></div>
                         <div class="col-md-12">
-                            <input type="text" name="order_note" class="form-control" value="{{auth()->user()->order_note}}" />
+                            <input type="text" name="order_note" class="form-control" value="{{auth()->guard('customer')->user()->order_note}}" />
                         </div>
                 </div>
             </div>

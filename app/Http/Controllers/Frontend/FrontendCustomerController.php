@@ -27,8 +27,13 @@ class FrontendCustomerController extends Controller
         // 'image'=>$image,
         'birth_date'=>$request->birth_date,
         'email'=>$request->email,
-        'role'=>'customer',
         'password'=>bcrypt($request->password),
+        'address'=>$request->address,
+        'city'=>$request->city,
+        'state'=>$request->state,
+        'zip'=>$request->zip,
+        'number'=>$request->number,
+        'role'=>'customer',
     ]);
     notify()->success('Customer Registration successful.');
     return redirect()->back();

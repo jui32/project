@@ -14,6 +14,40 @@ class CustomerController extends Controller
         return view('admin.pages.Customer.list',compact('Customer_data'));
 
     }
+
+    public function edit($id){
+        $Customer=Customer::find($id);
+        return view('admin.pages.Customer.edit',compact('Customer'));
+    }
+    public function update(Request $request,$id)
+    {
+        $Customer=Customer::find($id);
+
+        // $Item=Item::find($id);
+
+        // $Customer_image=$Customer->image;
+        // // dd($Customer_image);
+        // if($request->hasfile('image')){
+        //     $image=$request->file('image');
+        //     $Customer_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
+        //     $image->storeAs('/Customer',$Customer_image);
+
+        // }
+        
+
+        $Customer->update([
+            'name'=>$request->name,
+        // 'image'=>$image,
+        'birth_date'=>$request->birth_date,
+        'email'=>$request->email,
+        'role'=>'customer',
+        'password'=>bcrypt($request->password),
+        ]);
+        notify()->success('Customer Updated Successfully.');
+
+        return redirect(Route('Customer.list'));
+    }
+
     // public function create(){
        
     //     return view('admin.pages.Customer.create');

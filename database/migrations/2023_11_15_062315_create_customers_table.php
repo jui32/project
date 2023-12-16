@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('birth_date');
             $table->string('email');
             $table->string('password');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
+            $table->string('number');
             $table->string('role');
             $table->timestamps();
         });

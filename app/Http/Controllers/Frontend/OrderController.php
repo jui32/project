@@ -19,7 +19,7 @@ class OrderController extends Controller
         // dd($request->all());
 
         $cart=session()->get('vcart');
-        
+        // dd($cart);
         //create order
         $order=Order::create([
             'user_id'=>auth()->user()->id,

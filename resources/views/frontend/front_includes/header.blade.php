@@ -61,6 +61,8 @@
  
   <!-- End Header-->
 
+{{-- login --}}
+
   <!-- Modal -->
 <div class="modal fade" id="exampleModal_1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -94,6 +96,7 @@
 
 
 
+{{-- registration --}}
 
 <!-- Modal -->
 <form action="{{route('customer.doregister')}}" method="post">
@@ -113,24 +116,52 @@
             <input type="text" name="name" class="form-control" placeholder="Enter Name">
           </div>
 
+          <div class="mb-3">
+            <label for="">Birth Date</label>
+            <input type="number" name="birth_date" class="form-control" placeholder="Enter Birth Date">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter Email">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter Password">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Address</label>
+            <input type="string" name="address" class="form-control" placeholder="Enter address">
+          </div>
+
+          <div class="mb-3">
+            <label for="">City</label>
+            <input type="text" name="city" class="form-control" placeholder="Enter city">
+          </div>
+
+          <div class="mb-3">
+            <label for="">State</label>
+            <input type="text" name="state" class="form-control" placeholder="Enter state">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Zip</label>
+            <input type="number" name="zip" class="form-control" placeholder="Enter zip number">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Phone Number</label>
+            <input type="number" name="number" class="form-control" placeholder="Enter number">
+          </div>
           {{-- <div class="mb-3">
             <label for="InputCustomerName">Customer image </label>
             <input type="file" class="form-control" name="image" id="InputCustomerimage" aria-describedby="emailHelp" placeholder="Enter your name">
             <small id="emailHelp" class="form-text text-muted">add image</small>
           </div> --}}
 
-          <div class="mb-3">
-            <label for="">Birth Date</label>
-            <input type="text" name="birth_date" class="form-control" placeholder="Enter Birth Date">
-          </div>
-          <div class="mb-3">
-            <label for="">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Enter Email">
-          </div>
-          <div class="mb-3">
-            <label for="">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Enter Password">
-          </div>
+        
           <div class="mb-3">
             <label for="">Role</label>
             <input type="text" name="role" class="form-control" placeholder="Enter role">

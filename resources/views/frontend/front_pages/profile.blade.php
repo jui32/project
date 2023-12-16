@@ -49,7 +49,6 @@
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                {{-- {{ auth()->user()->name }} --}}
                                                 {{auth('customer')->user()->name}} 
                                             </div>
                                         </div>
@@ -74,7 +73,57 @@
                                                 {{auth('customer')->user()->email}} 
                                             </div>
                                         </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Address</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{auth('customer')->user()->address}} 
+                                            </div>
+                                        </div>
                                         <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">City</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{auth('customer')->user()->city}} 
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">State</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{auth('customer')->user()->state}} 
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Zip/Postal Code</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{auth('customer')->user()->zip}} 
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Phone Number</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{auth('customer')->user()->number}} 
+                                            </div>
+                                        </div>
+                                        <hr />
+
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Role</label>

@@ -1,4 +1,4 @@
-@extends('admin.pages.master')
+{{-- @extends('admin.pages.master')
 
 @section('content')
 
@@ -20,7 +20,7 @@
     <small id="emailHelp" class="form-text text-muted">add image</small>
   </div> --}}
 
-
+{{-- 
   <div class="form-group">
     <label for="InputCustomerEmail"> Email address </label>
     <input type="email" class="form-control" name="customeremail" id="InputCustomerEmail" aria-describedby="emailHelp" placeholder="Enter your email">
@@ -59,4 +59,4 @@
 
 
 </form>
-@endsection
+@endsection --}} 
