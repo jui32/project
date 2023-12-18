@@ -45,6 +45,8 @@ Route::post('/customer/dologin', [FrontendCustomerController::class, 'doLogin'])
 
 Route::get('/single-item/{id}', [FrontendItemController::class, 'singleItemtView'])->name('single.item');
 
+Route::get('/item-under-category/{cat_id}',[FrontendController::class,'itemsUnderCategory'])->name('items.under.category');
+
 
 //cart routes here
 Route::get('/cart-view',[CartController::class,'viewCart'])->name('cart.view');

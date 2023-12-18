@@ -33,4 +33,11 @@ class FrontendController extends Controller
         }
         return view("frontend.front_pages.search",compact('items'));
     }
+
+    public function itemsUnderCategory($category_id)
+    {
+        $itemsUnderCategory=Item::where('categroy_id',$category_id)->get();
+        // dd($itemsUnderCategory);
+        return view('frontend.front_pages.items-under-category',compact('itemsUnderCategory'));
+    }
 }

@@ -15,14 +15,17 @@
   <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
   <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
   <a href="service.html" class="nav-item nav-link">Service</a>
-  <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
-    <div class="dropdown-menu m-0">
-      @foreach ($categories as $key=>$category_data)
-      <a href="{{route('category.item',$category_data->id)}}" class="dropdown-item">{{$category_data->category_name}}</a>
-      @endforeach
+ 
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              @foreach ($headerCategories as $category)
+                              <li>
+                                  <a class="dropdown-item" href="  {{ route('items.under.category',$category->id) }}">{{$category->category_name}}</a>
+                              </li>
+                              @endforeach
     </div>
-  </div>
+  
   <a href="contact.html" class="nav-item nav-link">Contact</a>
 </div>
 </div>
