@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form action="{{route('customer.do.login')}}" method="post">
+<form action="{{route('customer.dologin')}}" method="post">
     @csrf
 
 

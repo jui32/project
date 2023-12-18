@@ -32,7 +32,6 @@
       <td>{{$item->password}}</td>
       <td>{{$item->role}}</td>
       <td>
-        <a class ="btn btn-success btn-sm" href="{{route('Customer.edit',$item->id)}}">Edit</a>
         <a class ="btn btn-danger btn-sm" href="{{route('Customer.delete',$item->id)}}">Delete</a>
       </td>
     </tr>

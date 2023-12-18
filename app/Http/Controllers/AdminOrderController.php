@@ -12,4 +12,14 @@ class AdminOrderController extends Controller
 
     }
    
+    public function delete($id)
+    {
+        $Order=Order::find($id);
+        if($Order)
+        {
+            $Order->delete();
+        }
+        notify()->success('Order Deleted Successfully.');
+        return redirect()->back();
+    }
 }

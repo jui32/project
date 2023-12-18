@@ -139,18 +139,16 @@ Route::post('/Item/update/{id}', [ItemController::class, 'update'])->name('Item.
 Route::get('/Item/delete/{id}', [ItemController::class, 'delete'])->name('Item.delete');
 
 
-
-
 //order
-
 Route::get('/order/list',[AdminOrderController::class,'list'])->name('order.list');
+
+Route::get('/order/delete/{id}',[AdminOrderController::class,'delete'])->name('order.delete');
 
 //Customer
 
 Route::get('/Customer/list',[CustomerController::class,'list'])->name('Customer.list');
 
-Route::get('/Customer/edit/{id}', [CustomerController::class, 'edit'])->name('Customer.edit');
-Route::post('/Customer/update/{id}', [CustomerController::class, 'update'])->name('Customer.update');
+Route::get('/Customer/delete/{id}', [CustomerController::class, 'delete'])->name('Customer.delete');
 
 //Delivery
 

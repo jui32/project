@@ -48,6 +48,39 @@ class CustomerController extends Controller
         return redirect(Route('Customer.list'));
     }
 
+
+    public function delete($id)
+    {
+        $Customer=Customer::find($id);
+        if($Customer)
+        {
+            $Customer->delete();
+        }
+        notify()->success('Customer Deleted Successfully.');
+        return redirect()->back();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // public function create(){
        
     //     return view('admin.pages.Customer.create');
