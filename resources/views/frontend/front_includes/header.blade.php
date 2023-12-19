@@ -24,6 +24,8 @@
                                   <a class="dropdown-item" href="  {{ route('items.under.category',$category->id) }}">{{$category->category_name}}</a>
                               </li>
                               @endforeach
+                            </ul>
+
     </div>
   
   <a href="contact.html" class="nav-item nav-link">Contact</a>

@@ -17,10 +17,12 @@ class checkCustomer
     {   
         if(auth()->guard('customer')->check())
         {
+            // dd('hi');
             return $next($request);
         }
+        // dd('bye');
         notify()->error('You are not customer.');
-        return redirect()->route('customer.dologin');
+        return redirect()->route('customer.login');
        
 
     }

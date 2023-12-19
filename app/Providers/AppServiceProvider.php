@@ -25,14 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $items=Item::all();
-        View::share('items',$items);
-
-        $categories=Category::all();
-        View::share('categories',$categories);
-    
-
-    
         Paginator::useBootstrap();
 
         if(Schema::hasTable('categories'))
