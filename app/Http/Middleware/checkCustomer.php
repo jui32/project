@@ -21,7 +21,7 @@ class checkCustomer
             return $next($request);
         }
         // dd('bye');
-        notify()->error('You are not customer.');
+        notify()->error('Please Login first.');
         return redirect()->route('customer.login');
        
 

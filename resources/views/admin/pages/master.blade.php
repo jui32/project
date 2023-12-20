@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Restoran</title>
     @notifyCss
 
     <!-- Custom fonts for this template-->
@@ -50,7 +50,6 @@
 @include('admin.includes.header')
 
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
               
                 @yield('content')

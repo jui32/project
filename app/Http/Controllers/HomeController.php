@@ -12,4 +12,7 @@ class HomeController extends Controller
         
         return view('admin.pages.master');
     }
+    public function dashboardhome(){
+        return view('admin.includes.dashboardhome');
+    }
 }

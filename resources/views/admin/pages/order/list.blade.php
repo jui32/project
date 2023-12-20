@@ -15,6 +15,7 @@
       <th scope="col">Receiver Name</th>
       <th scope="col">Receiver Email</th>
       <th scope="col">Order Note</th>
+      <th scope="col">Transaction ID</th>
       <th scope="col">Action</th>
 
  
@@ -31,6 +32,7 @@
       <td>{{$item->receiver_name}}</td>
       <td>{{$item->receiver_email}}</td>
       <td>{{$item->order_note}}</td>
+      <td>{{$item->transaction_id}}</td>
       <td>
         <a class ="btn btn-danger btn-sm" href="{{route('order.delete',$item->id)}}">Delete</a>
       </td>
