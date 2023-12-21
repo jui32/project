@@ -14,8 +14,6 @@ class OrderController extends Controller
     {
         //  dd($request->all());
        
-        //validation here
-
         // dd($request->all());
 
         $cart=session()->get('vcart');

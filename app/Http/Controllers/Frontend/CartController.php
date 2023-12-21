@@ -11,7 +11,7 @@ class CartController extends Controller
     public function viewCart()
     {
         // session()->flush();
-        
+        // dd('hi');
         return view('frontend.front_pages.cart');
     }
 

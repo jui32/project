@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Customer;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
+use App\Models\order;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class FrontendCustomerController extends Controller
 {
@@ -17,8 +18,14 @@ class FrontendCustomerController extends Controller
 
     public function userprofile()
     {
-        // $orders=Order::where('user_id',auth()->user()->id)->get();
-        return view('frontend.front_pages.profile');
+        // dd(auth('customer')->user()->id);
+        $id = auth('customer')->user()->id;
+        $pending = order::where('user_id', $id)->where('status', '=', 'pending')->count();
+        $confirm = order::where('user_id', $id)->where('status', '=', 'confirm')->count();
+        // dd($pending);
+        $list = order::where('user_id', $id)->get();
+        // dd($list);
+        return view('frontend.front_pages.profile', compact('pending', 'confirm', 'list'));
     }
     
    public function doRegister(Request $request){

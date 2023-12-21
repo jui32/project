@@ -9,6 +9,12 @@ use App\Models\Category;
 
 class ItemController extends Controller
 {
+    public function print()
+    {
+        $Item_data=Item::with('cat')->get();
+        return view('admin.pages.Item.print',compact('Item_data'));
+    }
+
     public function list(){
         $Item_data=Item::with('cat')->get();
         // $Item_data=Item::with(['category']);

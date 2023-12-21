@@ -46,7 +46,7 @@
              border: 1px solid #ccc;
              float: left;
              width: 250px !important;
-             height: 400px !important;
+             height: 466px !important;
          }
 
          div.gallery:hover {
@@ -55,7 +55,7 @@
 
          div.gallery img {
              width: 100%;
-             height: auto;
+             height: 220px;
          }
 
          div.desc {

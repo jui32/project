@@ -25,14 +25,21 @@
                         $subtotal_array=array_column($cart,'subtotal');
                         $sum=array_sum($subtotal_array);
                         dd($sum); --> 
-
-                    @php 
-                       
-                     
+                  
+                    {{-- @php 
                         $subtotal=array_sum(array_column(session()->get('vcart'),'subtotal'));
-                      
+                    @endphp --}}
 
+
+                    @php
+                        $vcart = session()->get('vcart');
+                        $subtotal = 0;
+
+                        if ($vcart && is_array($vcart)) {
+                            $subtotal = array_sum(array_column($vcart, 'subtotal'));
+                        }
                     @endphp
+
                   
 
                     @if(session()->has('vcart'))
@@ -56,7 +63,14 @@
                     <div class="d-flex justify-content-between information"><span>Subtotal</span><span>{{ $subtotal }} BDT</span></div>
                     <div class="d-flex justify-content-between information"><span>Shipping</span><span>70.00 BDT</span></div>
                     <div class="d-flex justify-content-between information"><span>Total(Incl. taxes)</span><span>{{ $subtotal+70 }} BDT</span></div>
-                    <a href="{{route('checkout')}}" class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button"><span>Checkout<i class="fa fa-long-arrow-right ml-1"></i></span></a></div>
+                    @if ($vcart && is_array($vcart)) 
+                    <a href="{{route('checkout')}}" class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button"><span>
+                        Checkout<i class="fa fa-long-arrow-right ml-1"></i></span>
+                    </a>
+                    
+                    @endif
+                    
+                    </div>
             </div>
         </div>
     </div>

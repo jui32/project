@@ -54,7 +54,7 @@ Route::get('/add-to-cart/{item_id}', [CartController::class, 'addToCart'])->name
 
 
 
-// Route::group(['middleware' => 'checkCustomer'], function () {
+Route::group(['middleware' => 'checkCustomer'], function () {
 
     Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
 
@@ -66,23 +66,27 @@ Route::get('/add-to-cart/{item_id}', [CartController::class, 'addToCart'])->name
     Route::get('/order-now/{item_id}', [FrontendOrderController::class, 'orderNow'])->name('order.now');
     Route::get('/cancel-order/{item_id}', [FrontendOrderController::class, 'cancelOrder'])->name('order.cancel');
 
+    
+   
+    
     // SSLCOMMERZ Start
 
-
-
+    Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+    Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+    
+    Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+    Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+    
     Route::post('/success', [SslCommerzPaymentController::class, 'success']);
     Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
     Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+    
+    Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']); 
 
-    Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
-    //SSLCOMMERZ END
+    
+   //SSLCOMMERZ END
 
-
-
-// });
-
-
-
+});
 
 
 
@@ -129,6 +133,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
             //Item
+
+            Route::get('/Item/Print', [ItemController::class, 'print'])->name('Item.print');
 
             Route::get('/Item/list', [ItemController::class, 'list'])->name('Item.list');
             Route::get('/Item/create', [ItemController::class, 'create'])->name('Item.create');

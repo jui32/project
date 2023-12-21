@@ -4,9 +4,6 @@
 
 
 <div class="container">
-<a class="btn btn-primary" href="{{route('Item.create')}}">+Add Item</a>
-<a class="btn btn-dark" href="{{route('Item.print')}}">Print</a>
-
 <table class="table">
   <thead>
     <tr>
@@ -43,6 +40,12 @@
       </td>
     </tr>
     @endforeach
+<button onclick="printlist()">Print List</button>
+<script>
+    function printlist(){
+        window.print();
+    }
+</script>
   </tbody>
 </table>
 </div>

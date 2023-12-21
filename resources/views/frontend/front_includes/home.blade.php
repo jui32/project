@@ -25,16 +25,16 @@
 {{-- {{$items}} --}}
 {{-- {{$categories}} --}}
 @foreach ($items as $item)
-<div class="gallery">
+<div class="gallery" >
 <a target="_blank" href="img/img1.jpg">
     <div class="col mb-5">
-    <div class="card h-100">
+    <div class="card" style="height: 460px; position: relative;">
     <!-- Sale badge-->
     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
      <!-- Product image-->
 
     <a href="{{route('single.item',$item->id)}}">
-    <img class="card-img-top" src="{{ url('uploads/Item/'.$item->image) }}" alt="..." > 
+    <img class="" height="220" src="{{ url('uploads/Item/'.$item->image) }}" alt="..." > 
         <div class="card-body p-4">
         <div class="text-center">
             <h5 class="fw-bolder">{{$item->name}}</h5>
@@ -53,14 +53,14 @@
        </a>
 
  <!-- Product actions-->
- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+ <div class=" card-footer p-4 pt-0 border-top-0 bg-transparent" style="
+ position: absolute;
+ bottom: 0%;
+ left: 18%;
+">
     <div class="text-center mb-1">
         <a class="btn btn-danger p-0" href="{{ route('add.toCart',$item->id) }}">AddToCart</a>
     </div> 
-    {{-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('add.toCart',$item->id)}}">Add to cart</a></div> --}}
-    {{-- <div class="text-center">
-        <a class="btn btn-outline-dark mt-auto" href="{{route('buy.now',$item->id)}}">Buy Now</a>
-    </div> --}}
 </div>
 </div>
 </div>   
@@ -75,12 +75,12 @@
 
 
 
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+{{-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container">
    <div class="text-center">
   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
     <h1 class="mb-5">Our Clients Say!!!</h1>
-</div>
+</div>  
 <div class="owl-carousel testimonial-carousel">
     <div class="testimonial-item bg-transparent border rounded p-4">
         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
@@ -136,6 +136,6 @@
     </div>
 </div>
 </div>
-</div>
+</div> --}}
 
 @endsection
