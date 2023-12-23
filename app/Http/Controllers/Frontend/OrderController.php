@@ -144,6 +144,11 @@ class OrderController extends Controller
        return redirect()->back();
         
     }
-    
+    public function order_details($id){
+        $order = Order::with('details')->find($id);
+        // dd($order);
+        return view('frontend.front_pages.order_details',compact('order'));
+    }
+
 
 }

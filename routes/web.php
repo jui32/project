@@ -64,9 +64,13 @@ Route::group(['middleware' => 'checkCustomer'], function () {
 
     Route::get('/profile', [FrontendCustomerController::class, 'userprofile'])->name('profile.view');
     Route::get('/logout', [FrontendCustomerController::class, 'logout'])->name('customer.logout');
-    // Route::get('/buy-now/{product_id}',[OrderController::class,'buyNow'])->name('buy.now');
+    
     Route::get('/order-now/{item_id}', [FrontendOrderController::class, 'orderNow'])->name('order.now');
+
+    Route::get('/order_details/{item_id}',[FrontendOrderController::class,'order_details'])->name('Order.details');
+
     Route::get('/cancel-order/{item_id}', [FrontendOrderController::class, 'cancelOrder'])->name('order.cancel');
+
 
     
    
