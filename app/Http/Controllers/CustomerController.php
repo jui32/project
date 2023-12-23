@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
+    public function print()
+    {
+        $Customer_data=Customer::all();
+        return view('admin.pages.Customer.print',compact('Customer_data'));
+    }
     public function list(){
         $Customer_data=Customer::all();
         return view('admin.pages.Customer.list',compact('Customer_data'));

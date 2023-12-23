@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
+    public function print()
+    {
+        $category_data= Category::all();
+        return view('admin.pages.categories.print',compact('category_data'));
+    }
     public function list()
     {
         $category_data=Category::all();

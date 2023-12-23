@@ -114,6 +114,8 @@ Route::group(['prefix' => 'admin'], function () {
 
             //users
 
+            Route::get('/users/Print', [UserController::class, 'print'])->name('users.print');
+
             Route::get('/users', [UserController::class, 'list'])->name('users.list');
             Route::get('/users/create', [UserController::class, 'createForm'])->name('users.create');
             Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
@@ -126,6 +128,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
             //category
+
+            Route::get('/category/Print', [CategoryController::class, 'print'])->name('category.print');
 
             Route::get('/category-list', [CategoryController::class, 'list'])->name('category.list');
             Route::get('/category/view/{id}', [CategoryController::class, 'view'])->name('category.view');
@@ -152,11 +156,16 @@ Route::group(['prefix' => 'admin'], function () {
 
 
             //order
+
+            Route::get('/order/Print', [AdminOrderController::class, 'print'])->name('order.print');
+
             Route::get('/order/list', [AdminOrderController::class, 'list'])->name('order.list');
 
             Route::get('/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('order.delete');
 
             //Customer
+
+            Route::get('/Customer/Print', [CustomerController::class, 'print'])->name('Customer.print');
 
             Route::get('/Customer/list', [CustomerController::class, 'list'])->name('Customer.list');
 
@@ -164,14 +173,11 @@ Route::group(['prefix' => 'admin'], function () {
 
             //Delivery
 
+            Route::get('/Delivery/Print', [DeliveryController::class, 'print'])->name('Delivery.print');
+
             Route::get('/Delivery/list', [DeliveryController::class, 'list'])->name('Delivery.list');
             Route::get('/Delivery/create', [DeliveryController::class, 'create'])->name('Delivery.create');
             Route::post('/Delivery/store', [DeliveryController::class, 'store'])->name('Delivery.store');
-
-
-
-            // Route::get('/frontend_home', [FrontendHomeController::class, 'home'])->name('Frontendhome');
-
 
 
 

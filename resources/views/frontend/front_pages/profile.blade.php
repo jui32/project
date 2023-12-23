@@ -187,7 +187,7 @@
                             <table class="table" align="center">
                                 <thead>
                                   <tr>
-                                    <th scope="col">OrderId</th>
+                                    <th scope="col">Order Id</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th> 

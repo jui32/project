@@ -92,7 +92,7 @@
                             <thead>
                               <tr>
                                 <th class="text-center"  scope="col">Id</th>
-                                <th class="text-center"scope="col">ProductId</th>
+                                <th class="text-center"scope="col">Item Name</th>
                                 <th class="text-center"scope="col">Quantity</th>
                                 <th class="text-end"scope="col">Price</th>
                               </tr>

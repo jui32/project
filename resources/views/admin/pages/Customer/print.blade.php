@@ -6,8 +6,6 @@
 
 
 <div class="container">
-  <a class="btn btn-danger" href="{{route('Customer.print')}}">Print</a>
-
 <table class="table">
   <thead>
     <tr>
@@ -38,7 +36,12 @@
       </td>
     </tr>
     @endforeach
-    
+    <button onclick="printlist()">Print List</button>
+<script>
+    function printlist(){
+        window.print();
+    }
+</script>
   </tbody>
 </table>
 </div>

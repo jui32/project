@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class DeliveryController extends Controller
 {
+    public function print()
+    {
+        $Delivery_data=Delivery::all();
+        return view('admin.pages.Delivery.print',compact('Delivery_data'));
+    }
     public function list(){
         $Delivery_data=Delivery::all();
         return view('admin.pages.Delivery.list',compact('Delivery_data'));

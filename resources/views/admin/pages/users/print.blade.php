@@ -3,9 +3,6 @@
 @section('content')
 <h1>User List</h1>
 
-<a href="{{route('users.create')}}" class="btn btn-success">Create new User</a>
-<a href="{{route('users.print')}}" class="btn btn-danger">Print</a>
-
 <table class="table">
   <thead>
     <tr>
@@ -37,9 +34,14 @@
     </tr>
         
     @endforeach
-   
 
-    
+    <button onclick="printlist()">Print List</button>
+    <script>
+        function printlist(){
+            window.print();
+        }
+    </script>
+   
   </tbody>
 </table>
 @endsection

@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function print()
+    {
+        $users=User::all();
+    // dd($users);
+    return view('admin.pages.users.print',compact('users'));
+    }
     public function loginform(){
         return view('admin.pages.login');
 

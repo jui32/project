@@ -4,9 +4,6 @@
 <h1>Category List</h1>
 
 <div class="container">
-<a class="btn btn-primary" href="{{route('category.create')}}">Create New Category</a>
-<a class="btn btn-danger" href="{{route('category.print')}}">Print</a>
-
 <table class="table">
   <thead>
     <tr>
@@ -29,7 +26,12 @@
       </td>
     </tr>
     @endforeach
-    
+    <button onclick="printlist()">Print List</button>
+<script>
+    function printlist(){
+        window.print();
+    }
+</script>
   </tbody>
 </table>
 </div>
