@@ -52,6 +52,12 @@
                         </div>
                         <div class="d-flex flex-row align-items-center"><span class="d-block">{{$item['quantity']}} x {{$item['price']}} .BDT</span><span class="d-block ml-5 font-weight-bold"> = {{$item['subtotal']}} .BDT</span><i class="fa fa-trash-o ml-3 text-black-50"></i></div>
                     </div>
+                    <td>
+                        <a href="{{route('decrease', $item['id'])}}">-</a>{{$item['quantity']}}</a>
+                        <a href="{{route('add.toCart',$item['id'])}}">+</a>
+                    </td>
+                    <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> 
+                        <a href="{{route('remove.cart', $item['id'])}}" class="btn btn-danger btn-round" data-abc="true"> Remove</a> </td>
                     @endforeach
                     @endif
                    

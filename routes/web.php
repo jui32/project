@@ -51,6 +51,8 @@ Route::get('/item-under-category/{cat_id}', [FrontendController::class, 'itemsUn
 //cart routes here
 Route::get('/cart-view', [CartController::class, 'viewCart'])->name('cart.view');
 Route::get('/add-to-cart/{item_id}', [CartController::class, 'addToCart'])->name('add.toCart');
+Route::get('/cart-remove/{id}',[CartController::class,'remove'])->name('remove.cart');
+Route::get('/quantity-decrease/{id}',[CartController::class,'decrease'])->name('decrease');
 
 
 

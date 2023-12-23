@@ -15,6 +15,21 @@ class CartController extends Controller
         return view('frontend.front_pages.cart');
     }
 
+    public function remove($ItemId){
+       
+
+
+        $cart=session()->get('vcart');
+        unset ($cart[$ItemId]);
+        session()->put('vcart',$cart);
+        // dd($cart);
+
+            notify()->success('Item Removed from cart');
+            return redirect()->back();
+
+        
+
+    }
 
     public function addToCart($iId)
     {
@@ -69,17 +84,31 @@ class CartController extends Controller
             return redirect()->back();
 
         }
+    }
+       //qty decrease
+         public function decrease($iId){
+         $item = Item::find($iId);
+         $cart = session()->get('vcart');
+         if(array_key_exists($iId,$cart)){//yes
+            //qty update
+            $cart[$iId]['quantity']=$cart[$iId]['quantity'] - 1;
+            $cart[$iId]['subtotal']=$cart[$iId]['quantity'] * $cart[$iId]['price'];
 
+        session()->put('vcart',$cart);
+        notify()->success('Quantity updated.');
+        return redirect()->back();
+
+    }
 
 
         return view('frontend.front_pages.cart');
     }
+    
+
     public function checkout()
     {
         return view('frontend.front_pages.checkout');
     }
-
-  
 }
 
 
