@@ -21,8 +21,9 @@ class OrderController extends Controller
         //create order
         $order=Order::create([
             'user_id'=>auth('customer')->user()->id,
-            'status'=>'pending',
             'total_price'=>array_sum(array_column($cart,'subtotal')),
+            'status'=>'pending',
+            'payment_method'=>$request->payment_method,
             'address'=>$request->address,
             'receiver_mobile'=>$request->phone_number,
             'receiver_name'=>$request->name,

@@ -11,11 +11,15 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
+                                    
+                                    <img src=" {{url('/uploads/customer/'.auth('customer')->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px"
                                         class="img-thumbnail" />
+
+                                        {{-- {{URL::asset('/image/propic.png')}} --}}
                                     <div class="middle">
                                         <a href="">Edit</a>
                                     </div>
+                                  
                                 </div>
                                 <div class="userData ml-3">
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a

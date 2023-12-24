@@ -1,7 +1,19 @@
 @extends('admin.pages.master')
 
+
 @section('content')
 <h1> Order list </h1>
+
+<div class="col-lg-4 px-5 d-inline-flex align-items- text-start">
+  <form class="col-lg-12" action="{{route('admin.order.search')}}" method="get">
+      <input style="border-radius: 10px;" class="col-lg-9" type="text" class="form-control" placeholder="Search..." name="search">
+      <button class="col-lg-2" type="submit" class="btn btn-success">Search</button>
+  </form>
+</div>
+
+<br>
+<br>
+
 <div class="container">
 <a class="btn btn-danger" href="{{route('order.print')}}">Print</a>
 <table class="table">

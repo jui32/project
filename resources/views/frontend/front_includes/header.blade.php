@@ -14,7 +14,7 @@
   <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
   <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
   <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
-  <a href="service.html" class="nav-item nav-link">Service</a>
+  <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
  
     <div class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
@@ -104,7 +104,7 @@
 {{-- registration --}}
 
 <!-- Modal -->
-<form action="{{route('customer.doregister')}}" method="post">
+<form action="{{route('customer.doregister')}}" method="post" enctype="multipart/form-data">
   @csrf
   
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,8 +122,14 @@
           </div>
 
           <div class="mb-3">
+            <label for="InputCustomerName">Customer image </label>
+            <input type="file" class="form-control" name="image" id="InputCustomerimage" aria-describedby="emailHelp" placeholder="Enter your name">
+            <small id="emailHelp" class="form-text text-muted">add image</small>
+          </div>
+          
+          <div class="mb-3">
             <label for="">Birth Date</label>
-            <input type="number" name="birth_date" class="form-control" placeholder="Enter Birth Date">
+            <input type="string" name="birth_date" class="form-control" placeholder="Enter Birth Date">
           </div>
 
           <div class="mb-3">
@@ -160,11 +166,6 @@
             <label for="">Phone Number</label>
             <input type="number" name="number" class="form-control" placeholder="Enter number">
           </div>
-          {{-- <div class="mb-3">
-            <label for="InputCustomerName">Customer image </label>
-            <input type="file" class="form-control" name="image" id="InputCustomerimage" aria-describedby="emailHelp" placeholder="Enter your name">
-            <small id="emailHelp" class="form-text text-muted">add image</small>
-          </div> --}}
 
         
           <div class="mb-3">

@@ -164,7 +164,7 @@ class SslCommerzPaymentController extends Controller
     {
         // dd($request->all());
         
-        session()->forget('vcart');
+        
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
         $currency = $request->input('currency');
@@ -188,7 +188,7 @@ class SslCommerzPaymentController extends Controller
                 $order_details->update([
                         'status'=>'confirm'
                 ]);
-
+                session()->forget('vcart');
                 notify()->success('Transaction is successfully Completed');         ;
                  return redirect()->route('home');
             }

@@ -29,9 +29,19 @@ class FrontendCustomerController extends Controller
     }
     
    public function doRegister(Request $request){
+    // dd($request->all());
+
+    $imageName = null;
+    if($request->hasFile('image')){
+        $image=$request->file('image');
+        $imageName=date('Ymdhis').'.'.$image->getClientOriginalExtension();
+        $image->storeAs('/Customer',$imageName);
+    }
+
+
     Customer::create([
         'name'=>$request->name,
-        // 'image'=>$image,
+        'image'=> $imageName,
         'birth_date'=>$request->birth_date,
         'email'=>$request->email,
         'password'=>bcrypt($request->password),
@@ -85,7 +95,8 @@ class FrontendCustomerController extends Controller
     public function logout()
     {
         auth('customer')->logout();
-        notify()->success('Logout Success.');    
+        notify()->success('Logout Success.');  
+        session()->forget('vcart');  
         return redirect()->route('home');
     }
 

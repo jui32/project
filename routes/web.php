@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminOrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\HomeController;
 use App\Http\controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\controllers\UserController;
 use App\Http\controllers\ItemController;
 use App\Http\controllers\OrderController;
@@ -15,6 +16,7 @@ use App\Http\controllers\DeliveryController;
 
 
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\controllers\Frontend\FrontendController;
 use App\Http\controllers\Frontend\FrontendCustomerController;
 use App\Http\Controllers\Frontend\FrontendItemController;
@@ -37,6 +39,7 @@ Route::get('/item-category/{id}', [CategoryController::class, 'ItemCategory'])->
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/search-item', [FrontendController::class, 'search'])->name('item.search');
 Route::get('/front_item', [FrontendItemController::class, 'showlist'])->name('front_item');
+Route::get('/contact', [FrontendContactController::class, 'contact'])->name('contact');
 
 Route::get('/customer/register', [FrontendCustomerController::class, 'register'])->name('customer.register');
 Route::post('/customer/doregister', [FrontendCustomerController::class, 'doRegister'])->name('customer.doregister');
@@ -160,6 +163,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/order/Print', [AdminOrderController::class, 'print'])->name('order.print');
 
             Route::get('/order/list', [AdminOrderController::class, 'list'])->name('order.list');
+            Route::get('/order/search', [AdminOrderController::class, 'search'])->name('admin.order.search');
 
             Route::get('/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('order.delete');
 

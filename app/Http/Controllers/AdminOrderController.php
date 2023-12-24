@@ -27,4 +27,17 @@ class AdminOrderController extends Controller
         notify()->success('Order Deleted Successfully.');
         return redirect()->back();
     }
+
+    public function search(Request $request)
+    {
+        // dd(request()->all())
+
+        if ($request->search) {
+            $items = order::where('user_id', 'LIKE', '%' . $request->search . '%')->get();
+            //select * from Plants where name like % rose %;
+        } else {
+            $items = order::all();
+        }
+        return view("admin.pages.order.Search", compact('items'));
+    }
 }
