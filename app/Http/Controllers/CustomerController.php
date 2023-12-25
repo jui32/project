@@ -27,19 +27,7 @@ class CustomerController extends Controller
     public function update(Request $request,$id)
     {
         $Customer=Customer::find($id);
-
-        // $Item=Item::find($id);
-
-        // $Customer_image=$Customer->image;
-        // // dd($Customer_image);
-        // if($request->hasfile('image')){
-        //     $image=$request->file('image');
-        //     $Customer_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-        //     $image->storeAs('/Customer',$Customer_image);
-
-        // }
         
-
         $Customer->update([
             'name'=>$request->name,
         // 'image'=>$image,

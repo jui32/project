@@ -29,7 +29,7 @@ if($validate->fails()){
 }
 
 $credential=$request->only('email','password');
-// dd($credential);
+
 $login=auth()->attempt($credential);
 if($login){
     // dd('valid person');
@@ -68,6 +68,7 @@ public function createForm()
 
 public function store(Request $request)
 {
+    // dd($request->all());
     $validate=Validator::make($request->all(),[
         'user_name'=>'required',
         'role'=>'required',
@@ -83,13 +84,12 @@ public function store(Request $request)
     $user_image=null;
     if($request->hasFile('image'))
     {
-        $image=$request->file('image');
-        $user_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
-       
-        $image->storeAs('/uploads/user',$user_image);
+        $user_image=date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('/uploads',$user_image);
 
     }
-
+    // dd($user_image);
+ 
    
     User::create([
         'name'=>$request->user_name,
@@ -103,17 +103,7 @@ public function store(Request $request)
 
 
 }
-public function delete($id)
-{
-  $users=User::find($id);
-  if($users)
-  {
-    $users->delete();
-  }
 
-  notify()->success('User Deleted Successfully.');
-  return redirect()->back();
-}
 
 public function edit($id)
 {
@@ -130,28 +120,26 @@ public function update(Request $request,$id)
     if($users)
     {
 
-      $user_image=$users->image;
-          if($request->hasFile('image'))
-          {
-              $image=$request->file('image');
-              $user_image=date('Ymdhis').'.'.$image->getClientOriginalExtension();
-             
-              $image->storeAs('/uploads/user',$user_image);
-      
-          }
+     
+    $user_image=null;
+    if($request->hasFile('image'))
+    {
+        $user_image=date('Ymdhis').'.'.$request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('/uploads',$user_image);
+
+    }
 
       }
 
       $users->update([
         'name'=>$request->user_name,
-        'role'=>$request->role,
         'image'=>$user_image,
-        'email'=>$request->user_email,
-        'password'=>bcrypt($request->user_password)
+       
     
     ]);
     return redirect()->back();
     }
+    
 }
 
 

@@ -67,14 +67,7 @@
                             <input type="text" name="order_note" class="form-control" value="{{auth()->guard('customer')->user()->order_note}}" />
                         </div>
                 </div>
-                <div class="form-group">
-                    <label for="InputPaymentMethod">Payment Method:</label>
-                    <select name="payment_method" id="" class="form-control" required>
-                    <option value="Bkash">Bkash</option>
-                    <option value="Rocket">Rocket</option>
-                    <option value="COD">COD</option>
-                    </select>
-                    </div>
+               
             </div>
             <!--SHIPPING METHOD END-->
             <!--CREDIT CART PAYMENT-->

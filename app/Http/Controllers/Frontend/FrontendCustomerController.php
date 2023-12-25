@@ -28,9 +28,29 @@ class FrontendCustomerController extends Controller
         return view('frontend.front_pages.profile', compact('pending', 'confirm', 'list'));
     }
     
-   public function doRegister(Request $request){
-    // dd($request->all());
+    
+   public function doRegister(Request $request)
+   {
 
+    $validate=Validator::Make($request->all(),[
+        'name'=>'required',
+        'email'=>'required',
+        'birth_date'=>'required',
+        'email'=>'required',
+        'password'=>'required',
+        'address'=>'required',
+        'city'=>'required',
+        'state'=>'required',
+        'number'=>'required',
+        'password'=>'required']);
+
+
+        if ($validate->fails()){
+            dd('failed');
+            return redirect()->back();
+        }
+    
+    // dd($request->all());
     $imageName = null;
     if($request->hasFile('image')){
         $image=$request->file('image');

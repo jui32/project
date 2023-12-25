@@ -13,8 +13,6 @@
   {{-- <a href="{{route('item.category')}}" class="nav-item nav-link active">Categories</a> --}}
   <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
   <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
-  <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
-  <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
  
     <div class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
@@ -27,8 +25,8 @@
                             </ul>
 
     </div>
-  
-  <a href="contact.html" class="nav-item nav-link">Contact</a>
+    <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
+    <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
 </div>
 </div>
 

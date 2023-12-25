@@ -13,7 +13,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dadmin%2BIcon&psig=AOvVaw3AMBp_rJxngUS0yU41CNmJ&ust=1703059977073000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPiDw_yGm4MDFQAAAAAdAAAAABAI" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                    <img src=" {{url('/uploads/uploads/'.auth()->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
                                         <a href="">Edit</a>
                                     </div>
@@ -48,17 +48,6 @@
                                             </div>
                                         </div>
                                         <hr />
-
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Birth Date</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                March 22, 1994.
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        
                                         
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">

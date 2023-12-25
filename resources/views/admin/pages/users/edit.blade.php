@@ -22,28 +22,29 @@
    @csrf
   <div class="form-group">
     <label for="">Enter User Name:</label>
-    <input  value="{{$users->user_name}}" required type="text" class="form-control" id="" placeholder="Enter name" name="user_name">
+    <input  value="{{$users->name}}" required type="text" class="form-control" id="" placeholder="Enter name" name="user_name">
     @error('user_name')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
   </div>
 
-  <div class="form-group">
+  {{-- <div class="form-group">
     <label for="">Select Role:</label>
    <select value="{{$users->role}}"  required class="form-control" name="role" id="">
         <!-- <option value="">Admin</option> -->
         <option value="manager">Manager</option>
         <option value="account">Account</option>
+        <option value="account">Admin</option>
    </select>
-  </div>
+  </div> --}}
 
 
 
 
   <div class="form-group">
     <label for="">Enter Email: </label>
-    <input  value="{{$users->user_email}}" required type="email" class="form-control" placeholder="Enter Email" name="user_email">
+    <input  value="{{$users->email}}" required type="email" class="form-control" placeholder="Enter Email" name="user_email">
     
     @error('user_email')
     <div class="alert alert-danger">{{ $message }}</div>
@@ -53,15 +54,15 @@
 
 
 
-  <div class="form-group">
+  {{-- <div class="form-group">
     <label for="">Enter Password: </label>
-    <input value="{{$users->user_password}}" required type="password" class="form-control" placeholder="Enter password" name="user_password">
+    <input value="{{$users->password}}" required type="password" class="form-control" placeholder="Enter password" name="user_password">
     
     @error('user_password')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
     
-  </div>
+  </div> --}}
 
 
   <div class="form-group">
