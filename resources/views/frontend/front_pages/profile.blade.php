@@ -194,6 +194,7 @@
                                     <th scope="col">Order Id</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Order Status</th>
                                     <th scope="col">Action</th> 
                                   </tr>
                                 </thead>
@@ -204,6 +205,7 @@
                                     <th scope="row">{{ $order->id }}</th>
                                     <td>{{ $order->created_at}}</td>
                                     <td>{{ $order->status }}</td>
+                                    <td>{{ $order->order_status }}</td>
                                     <td> <a class="btn btn-danger" href="{{route('Order.details',$order->id)}}">View</a> </td>
                                  
                                      

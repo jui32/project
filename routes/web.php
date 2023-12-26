@@ -165,6 +165,12 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/order/list', [AdminOrderController::class, 'list'])->name('order.list');
             Route::get('/order/search', [AdminOrderController::class, 'search'])->name('admin.order.search');
 
+            Route::get('/order/edit/{id}', [AdminOrderController::class, 'edit'])->name('order.edit');
+            Route::post('/order/update/{id}', [AdminOrderController::class, 'update'])->name('order.update');
+
+            Route::get('/order/view/{id}', [AdminOrderController::class, 'view'])->name('order.view');
+            Route::post('/order/view/status/{id}', [AdminOrderController::class, 'status'])->name('order.view,status');
+
             Route::get('/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('order.delete');
 
             //Customer

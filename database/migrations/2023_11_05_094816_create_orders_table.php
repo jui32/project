@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('status')->default('pending');
+            $table->string('payment_status')->default('pending');
             $table->double('total_price')->default(0.0);
             $table->string('payment_method')->default('SSLCommerz');
             $table->string('address');
