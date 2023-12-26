@@ -186,7 +186,8 @@ class SslCommerzPaymentController extends Controller
                 Here you can also sent sms or email for successfull transaction to customer
                 */
                 $order_details->update([
-                        'status'=>'confirm'
+                        'status'=>'confirm',
+                        'payment_status'=>'success'
                 ]);
                 session()->forget('vcart');
                 notify()->success('Transaction is successfully Completed');         ;

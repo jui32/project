@@ -157,9 +157,10 @@
     <div class="form-group">
         <label for="InputPaymentMethod">Status:</label>
         <select name="status" id="" class="form-control" required>
-        <option value="processing">processing</option>
         <option value="handedOver">handed over</option>
         <option value="ontheway">on the way</option>
+		<option value="processing">confirm</option>
+
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
