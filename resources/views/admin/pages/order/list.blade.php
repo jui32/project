@@ -30,6 +30,7 @@
       <th scope="col">Payment Status</th>
       <th scope="col">Order Status</th>
       <th scope="col">Transaction ID</th>
+      <th scope="col">Deliveryman</th>
       <th scope="col">Action</th>
 
  
@@ -49,6 +50,7 @@
       <td>{{$item->transaction_id}}</td>
       <td>{{$item->status}}</td>
       <td>{{$item->payment_status}}</td>
+      <td>{{$item->deliver->name ?? null}}</td>
 
 
       <td>

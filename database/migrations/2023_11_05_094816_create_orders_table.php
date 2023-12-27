@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('user_id');
             $table->string('status')->default('pending');
             $table->string('payment_status')->default('pending');
@@ -23,6 +24,9 @@ return new class extends Migration
             $table->string('receiver_name');
             $table->string('receiver_email')->nullable();
             $table->text('order_note')->nullable();
+            $table->text('transaction_id')->nullable();
+            $table->string('deliveryman')->nullable();
+
             $table->timestamps();
         });
     }

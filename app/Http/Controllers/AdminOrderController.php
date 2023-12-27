@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Delivery;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -15,17 +17,23 @@ class AdminOrderController extends Controller
 
 
     public function list(){
-        $order_data= Order::all();
-        return view('admin.pages.order.list',compact('order_data'));
+        // dd('hi');
+        $deliveryman = Delivery::all();    
+        $order_data= Order::with('deliver')->get();
+        // dd($order_data);
+        return view('admin.pages.order.list',compact('order_data','deliveryman'));
 
     }
 
 
 
     public function view( $id){
+
+        $deliveryman = Delivery::all();   
+        // dd($deliveryman) ;
         $order = Order::with('details')->find($id);
-        // dd($order);
-        return view('admin.pages.order.view',compact('order'));
+        
+        return view('admin.pages.order.view',compact('order','deliveryman'));
     }
 
 
@@ -35,12 +43,27 @@ class AdminOrderController extends Controller
         $order = Order::find($id);
         // dd($order);
         $order->update([
-            'status'=>($request->status),
+            'status'=>($request->deliveryMan),
 
         ]);
         return view('admin.pages.order.view',compact('order'));
     }
    
+
+    public function deliveryman(Request $request, $id){
+        // $request->all();
+        //  dd($request->all());
+        $order = Order::find($id);
+      
+        $order->update([
+            'deliveryman'=>$request->deliveryMan,
+            'status'=>$request->status,
+
+
+        ]);
+       return redirect()->back();
+    }
+
 
 
     public function delete($id)

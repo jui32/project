@@ -15,8 +15,7 @@
                                     <img src=" {{url('/uploads/customer/'.auth('customer')->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px"
                                         class="img-thumbnail" />
 
-                                        {{-- {{URL::asset('/image/propic.png')}} --}}
-                                    <div class="middle">
+                                        <div class="middle">
                                         <a href="">Edit</a>
                                     </div>
                                   
@@ -195,6 +194,7 @@
                                     <th scope="col">Date</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Payment Status</th>
+                                    <th scope="col">Delivery Man</th>
                                     <th scope="col">Action</th> 
                                   </tr>
                                 </thead>
@@ -206,6 +206,9 @@
                                     <td>{{ $order->created_at}}</td>
                                     <td>{{ $order->status }}</td>
                                     <td>{{ $order->payment_status }}</td>
+                                    {{-- <td>{{ $order->deliveryman }}</td> --}}
+                                    <td>{{$order->deliver->name ?? null}}</td>
+
                                     <td> <a class="btn btn-danger" href="{{route('Order.details',$order->id)}}">View</a> </td>
                                  
                                      

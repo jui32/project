@@ -15,7 +15,6 @@
                                 <div class="image-container">
                                     <img src=" {{url('/uploads/uploads/'.auth()->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
-                                        <a href="">Edit</a>
                                     </div>
                                 </div>
                                 <div class="userData ml-3">

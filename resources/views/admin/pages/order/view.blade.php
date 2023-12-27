@@ -76,7 +76,9 @@
     				<address>
     					<strong>Order Date:</strong><br>
     					{{$order->created_at}}<br><br>
+						<p>Status: {{$order->status}}</p>
     				</address>
+
     			</div>
     		</div>
     	</div>
@@ -151,7 +153,7 @@
 
 
 
-<form action="{{route('order.view,status',$order->id)}}" method="post">
+<form action="{{route('order.view.deliveryman',$order->id)}}" method="post">
     
 @csrf
     <div class="form-group">
@@ -159,10 +161,26 @@
         <select name="status" id="" class="form-control" required>
         <option value="handedOver">handed over</option>
         <option value="ontheway">on the way</option>
-		<option value="processing">confirm</option>
+		<option value="processing">processing</option>
 
         </select>
     </div>
+
+	<div class="form-group">
+        <label for="InputPaymentMethod">Delivery man:</label>
+		<select name="deliveryMan" id="" class="form-control" required>
+		<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<option value="" selected disabled> Select Delivery Man </option>
+			@foreach ($deliveryman as $delivery)
+			{{-- <li>
+				<a class="dropdown-item" href="{{ route('Delivery.list',$delivery->id) }}">{{$delivery->name}}</a>
+			</li> --}}
+			<option value={{$delivery->id}} {{ $delivery->id == $order->deliveryMan ? "selected" : "" }}> {{$delivery->name}} </option>
+			@endforeach
+		  </ul>
+		</select>
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   @endsection

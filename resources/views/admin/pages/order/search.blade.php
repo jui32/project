@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <br>
 
 <h4>Search result for : {{ request()->search }} found {{$items->count()}} items.</h4>
@@ -40,7 +39,7 @@
 
             @else
 
-            <h1>No product found.</h1>
+            <h1>No item found.</h1>
             @endif
 
         </div>

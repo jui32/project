@@ -76,7 +76,7 @@
                 <a class="nav-link" href="{{route('Delivery.list')}}"  data-target="#collapseTwo"
                      aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Delivery<span>
+                    <span>Delivery man<span>
                 </a>
             </li>
 

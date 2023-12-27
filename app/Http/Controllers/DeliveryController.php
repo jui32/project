@@ -23,9 +23,9 @@ class DeliveryController extends Controller
     }
     public function store(Request $request){
         Delivery::create([
-            'customername'=>$request->customername,
-            'customeraddress'=>$request->customeraddress,
-            'customernumber'=>$request->customernumber,
+            'name'=>$request->name,
+            'address'=>$request->address,
+            'number'=>$request->number,
         ]);
         return redirect(Route('Delivery.list'));
     }

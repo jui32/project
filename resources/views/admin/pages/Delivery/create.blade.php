@@ -8,22 +8,22 @@
 
 
   <div class="form-group">
-    <label for="InputCustomerName">Customer name </label>
-    <input type="text" class="form-control" name="customername" id="InputCustomerName" aria-describedby="emailHelp" placeholder="Enter your name">
+    <label for="InputCustomerName">Deliveryman name </label>
+    <input type="text" class="form-control" name="name" id="InputCustomerName" aria-describedby="emailHelp" placeholder="Enter your name">
     <small id="emailHelp" class="form-text text-muted">Enter your name</small>
   </div>
 
 
   <div class="form-group">
     <label for="InputCustomerEmail"> address </label>
-    <input type="text" class="form-control" name="customeraddress" id="InputCustomerEmail" aria-describedby="emailHelp" placeholder="Enter your address">
+    <input type="text" class="form-control" name="address" id="InputCustomerEmail" aria-describedby="emailHelp" placeholder="Enter your address">
     <small id="emailHelp" class="form-text text-muted">Enter your email address</small>
   </div>
 
 
   <div class="form-group">
     <label for="InputCustomerNumber">Contact number </label>
-    <input type="number" class="form-control" name="customernumber" id="InputCustomerNumber" aria-describedby="emailHelp" placeholder="Enter your number">
+    <input type="number" class="form-control" name="number" id="InputCustomerNumber" aria-describedby="emailHelp" placeholder="Enter your number">
     <small id="emailHelp" class="form-text text-muted">Enter your Number</small>
   </div>
 

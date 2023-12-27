@@ -21,7 +21,7 @@ class OrderController extends Controller
         //create order
         $order=Order::create([
             'user_id'=>auth('customer')->user()->id,
-            'total_price'=>array_sum(array_column($cart,'subtotal')),
+            'total_price'=>array_sum(array_column($cart,'subtotal')) +70,
             'status'=>'pending',
             'payment_status'=>'null',
             'address'=>$request->address,
@@ -30,6 +30,7 @@ class OrderController extends Controller
             'receiver_email'=>$request->email_address,
             'order_note'=>$request->order_note,
             'transaction_id'=>date('YmdHis'),
+            'deliveryman'=>'null',
 
             
         ]);
@@ -147,6 +148,7 @@ class OrderController extends Controller
     }
     public function order_details($id){
         $order = Order::with('details')->find($id);
+        // dd($order->total_price);
         // dd($order);
         return view('frontend.front_pages.order_details',compact('order'));
     }

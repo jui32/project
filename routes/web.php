@@ -170,6 +170,7 @@ Route::group(['prefix' => 'admin'], function () {
 
             Route::get('/order/view/{id}', [AdminOrderController::class, 'view'])->name('order.view');
             Route::post('/order/view/status/{id}', [AdminOrderController::class, 'status'])->name('order.view,status');
+            Route::post('/order/view/deliveryman/{id}', [AdminOrderController::class, 'deliveryman'])->name('order.view.deliveryman');
 
             Route::get('/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('order.delete');
 
@@ -188,6 +189,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/Delivery/list', [DeliveryController::class, 'list'])->name('Delivery.list');
             Route::get('/Delivery/create', [DeliveryController::class, 'create'])->name('Delivery.create');
             Route::post('/Delivery/store', [DeliveryController::class, 'store'])->name('Delivery.store');
+
+            Route::get('/deliveryman-for-a-order/{cat_id}', [FrontendController::class, 'deliveryman'])->name('items.under.category');
+
 
 
 

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->string('customername');
-            $table->string('customeraddress');
-            $table->string('customernumber');
+            $table->string('name');
+            $table->string('address');
+            $table->string('number');
             $table->timestamps();
         });
     }
