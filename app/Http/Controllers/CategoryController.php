@@ -89,15 +89,6 @@ class CategoryController extends Controller
         
         
         $category_data=Category::find($id);
-        //$category_image='';
-        
-        // if($request->hasFile('image')){
-        //     $image=$request->file('image');
-        //     // dd($image);
-        //     $category_image=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-        //     $image->storeAs('/categories',$category_image);
-            
-        // }
         
          $category_data->update([
             'category_name'=>$request->category_name,

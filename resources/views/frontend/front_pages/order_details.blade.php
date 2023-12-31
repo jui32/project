@@ -51,14 +51,14 @@
     				<address>
     				<strong>Billed To:</strong><br>
     					{{$order->user_id}}<br>
-    					{{$order->receiver_address}}<br>
+    					{{$order->address}}<br>
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
         			<strong>Shipped To:</strong><br>
                     {{$order->user_id}}<br>
-                    {{$order->receiver_address}}<br>
+                    {{$order->address}}<br>
     				</address>
     			</div>
     		</div>
@@ -66,8 +66,7 @@
     			<div class="col-xs-6">
     				<address>
     					<strong>Payment Method:</strong><br>
-    					Visa ending **** 4242<br>
-    					jsmith@email.com
+    					SSLCommerz<br>
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">

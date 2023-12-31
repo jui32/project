@@ -206,7 +206,6 @@
                                     <td>{{ $order->created_at}}</td>
                                     <td>{{ $order->status }}</td>
                                     <td>{{ $order->payment_status }}</td>
-                                    {{-- <td>{{ $order->deliveryman }}</td> --}}
                                     <td>{{$order->deliver->name ?? null}}</td>
 
                                     <td> <a class="btn btn-danger" href="{{route('Order.details',$order->id)}}">View</a> </td>

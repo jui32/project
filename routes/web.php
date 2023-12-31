@@ -190,7 +190,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/Delivery/create', [DeliveryController::class, 'create'])->name('Delivery.create');
             Route::post('/Delivery/store', [DeliveryController::class, 'store'])->name('Delivery.store');
 
-            Route::get('/deliveryman-for-a-order/{cat_id}', [FrontendController::class, 'deliveryman'])->name('items.under.category');
+            Route::get('/Delivery/edit/{id}', [DeliveryController::class, 'edit'])->name('Delivery.edit');
+            Route::post('/Delivery/update/{id}', [DeliveryController::class, 'update'])->name('Delivery.update');
 
 
 

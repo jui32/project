@@ -31,5 +31,40 @@ class DeliveryController extends Controller
     }
 
 
+    public function edit($id){
+
+        $Delivery_data=Delivery::find($id);
+        return view('admin.pages.Delivery.edit',compact('Delivery_data'));
+    }
+    
+    public function update(Request $request,$id)
+    {
+        
+        
+        $Delivery_data=Delivery::find($id);
+        
+         $Delivery_data->update([
+            'name'=>$request->name,
+            'address'=>$request->address,
+            'number'=>$request->number,
+            ]);
+            notify()->success('Deliveryman Updated Successfully.');
+            return redirect(Route('Delivery.list'));
+            
+        }
+        
+    
+        public function delete($id)
+    {
+      $Delivery_data=Delivery::find($id);
+      if($Delivery_data)
+      {
+        $Delivery_data->delete();
+      }
+
+      notify()->success('Deliveryman Deleted Successfully.');
+      return redirect()->back();
+    }
+
     }
 

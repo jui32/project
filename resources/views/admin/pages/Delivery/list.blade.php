@@ -28,9 +28,8 @@
       <td>{{$item->number}}</td>
 
       <td>
-        <a class ="btn btn-success btn-sm" href="#">Edit</a>
+        <a class ="btn btn-primary btn-sm" href="{{route('Delivery.edit',$item->id)}}">Edit</a>
         <a class ="btn btn-danger btn-sm" href="#">Delete</a>
-        <a class ="btn btn-primary btn-sm" href="#">Edit</a>
       </td>
     </tr>
     @endforeach

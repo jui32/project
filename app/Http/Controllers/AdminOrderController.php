@@ -61,7 +61,8 @@ class AdminOrderController extends Controller
 
 
         ]);
-       return redirect()->back();
+    //    return redirect()->back();
+       return redirect(Route('order.list'));
     }
 
 
