@@ -14,7 +14,7 @@
 <br>
 <br>
 
-<div class="container">
+
 <a class="btn btn-danger" href="{{route('order.print')}}">Print</a>
 <table class="table">
   <thead>
@@ -63,6 +63,6 @@
     
   </tbody>
 </table>
-</div>
+
 
 @endsection

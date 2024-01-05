@@ -1,6 +1,7 @@
 @extends('admin.pages.master')
 @section('content')
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,16 +52,14 @@
     				<address>
     				<strong>Billed To:</strong><br>
     					{{$order->user_id}}<br>
-    					{{$order->receiver_address}}<br>
+    					{{$order->address}}<br>
     				</address>
     			</div>
-               
-
     			<div class="col-xs-6 text-right">
     				<address>
         			<strong>Shipped To:</strong><br>
                     {{$order->user_id}}<br>
-                    {{$order->receiver_address}}<br>
+                    {{$order->address}}<br>
     				</address>
     			</div>
     		</div>
@@ -68,17 +67,14 @@
     			<div class="col-xs-6">
     				<address>
     					<strong>Payment Method:</strong><br>
-    					Visa ending **** 4242<br>
-    					jsmith@email.com
+    					SSLCommerz<br>
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
     					<strong>Order Date:</strong><br>
     					{{$order->created_at}}<br><br>
-						<p>Status: {{$order->status}}</p>
     				</address>
-
     			</div>
     		</div>
     	</div>
@@ -127,17 +123,14 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Shipping</strong></td>
-    								<td class="no-line text-right">100 .BDT</td> 
+    								<td class="no-line text-right">70 .BDT</td> 
     							</tr>
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">{{$item->total}}</td>
+    								<td class="no-line text-right">{{$order->total_price}}</td>
     							</tr>
-
-                                <a class ="btn btn-primary btn-sm" href="#">Update</a>
-
     						</tbody>
                             
                           </table>
@@ -150,41 +143,6 @@
 		</script>
 </body>
 </html>
-
-
-
-<form action="{{route('order.view.deliveryman',$order->id)}}" method="post">
-    
-@csrf
-    <div class="form-group">
-        <label for="InputPaymentMethod">Status:</label>
-        <select name="status" id="" class="form-control" required>
-        <option value="completed">Completed</option>
-        <option value="ontheway">On the way</option>
-		<option value="processing">Processing</option>
-		<option value="cancelled">Cancelled</option>
-
-
-        </select>
-    </div>
-
-	<div class="form-group">
-        <label for="InputPaymentMethod">Delivery man:</label>
-		<select name="deliveryMan" id="" class="form-control" required>
-		<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			<option value="" selected disabled> Select Delivery Man </option>
-			@foreach ($deliveryman as $delivery)
-			{{-- <li>
-				<a class="dropdown-item" href="{{ route('Delivery.list',$delivery->id) }}">{{$delivery->name}}</a>
-			</li> --}}
-			<option value={{$delivery->id}} {{ $delivery->id == $order->deliveryMan ? "selected" : "" }}> {{$delivery->name}} </option>
-			@endforeach
-		  </ul>
-		</select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
   @endsection
    
    

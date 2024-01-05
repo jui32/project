@@ -52,18 +52,11 @@
                                 cols="30" rows="5">{{ $Item->item_description }}</textarea>
                         </div>
 
-
-
-                        {{-- <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input type="text" class="form-control" name="type">  --}}
-                        {{-- <label for="">Select Category:</label>
-                <select required class="form-control" name="type" id="">
              
                  {{-- @foreach ($categories as $cat)
                  <option value="{{$cat->id}}">{{$cat->category_name}}</option>
                  @endforeach
                  --}}
-                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

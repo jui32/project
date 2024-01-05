@@ -4,8 +4,6 @@
 
 <h1>Customer list</h1>
 
-
-<div class="container">
   <a class="btn btn-danger" href="{{route('Customer.print')}}">Print</a>
 
 <table class="table">
@@ -41,6 +39,6 @@
     
   </tbody>
 </table>
-</div>
+
 
 @endsection
