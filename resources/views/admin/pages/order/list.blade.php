@@ -55,7 +55,6 @@
 
       <td>
         <a class ="btn btn-primary btn-sm" href="{{route('order.view',$item->id)}}">View</a>
-        <a class ="btn btn-danger btn-sm" href="{{route('order.delete',$item->id)}}">Delete</a>
 
       </td>
     </tr>

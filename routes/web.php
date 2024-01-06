@@ -36,7 +36,10 @@ use App\Http\Controllers\SslCommerzPaymentController;
 
 
 Route::get('/item-category/{id}', [CategoryController::class, 'ItemCategory'])->name('category.item');
+
 Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+
 Route::get('/search-item', [FrontendController::class, 'search'])->name('item.search');
 Route::get('/front_item', [FrontendItemController::class, 'showlist'])->name('front_item');
 Route::get('/contact', [FrontendContactController::class, 'contact'])->name('contact');

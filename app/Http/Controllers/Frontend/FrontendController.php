@@ -40,4 +40,12 @@ class FrontendController extends Controller
         // dd($itemsUnderCategory);
         return view('frontend.front_pages.items-under-category',compact('itemsUnderCategory'));
     }
+
+
+    public function about()
+    {
+        // dd('hi');
+     return view('frontend.front_pages.about.about');
+
+    }
 }

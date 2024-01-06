@@ -5,7 +5,7 @@
 
 <div class="container">
 <a class="btn btn-primary" href="{{route('Item.create')}}">+Add Item</a>
-<a class="btn btn-dark" href="{{route('Item.print')}}">Print</a>
+<a class="btn btn-danger" href="{{route('Item.print')}}">Print</a>
 
 <table class="table">
   <thead>
@@ -37,7 +37,6 @@
       <td>{{$item->item_description}}</td>
       
       <td>
-        <a class ="btn btn-success btn-sm" href="#">View</a>
         <a class ="btn btn-danger btn-sm" href="{{route('Item.delete',$item->id)}}">Delete</a>
         <a class ="btn btn-primary btn-sm" href="{{route('Item.edit',$item->id)}}">Edit</a>
       </td>

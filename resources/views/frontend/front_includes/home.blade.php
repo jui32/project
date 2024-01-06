@@ -10,7 +10,7 @@
                 <p class="text-white animated slideInLeft mb-4 pb-2">Food is Life</p>
             </div>
             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                <img class="img-fluid" src="img/he.png" alt>
+                <img class="img-fluid" src="img/hero.png" alt>
             </div>
         </div>
     </div>

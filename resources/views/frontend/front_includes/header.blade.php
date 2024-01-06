@@ -11,8 +11,8 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
   <div class="navbar-nav ms-auto py-0 pe-4">
   {{-- <a href="{{route('item.category')}}" class="nav-item nav-link active">Categories</a> --}}
-  <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
-  <a href="{{route('front_item')}}" class="nav-item nav-link active">All Items</a>
+  <a href="{{route('home')}}" class="nav-item nav-link active " >Home</a>
+  <a href="{{route('front_item')}}" class="nav-item nav-link ">All Items</a>
  
     <div class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
@@ -25,7 +25,7 @@
                             </ul>
 
     </div>
-    <a href="{{route('cart.view')}}" class="nav-item nav-link">About</a>
+    <a href="{{route('about')}}" class="nav-item nav-link">About</a>
     <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
 </div>
 </div>
@@ -46,7 +46,7 @@
 <!-- Button trigger modal -->
 @if (auth('customer')->user())
   {{-- <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li> --}}
-  <a class="btn btn-outline-light" href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
+  <a class="btn btn-outline-light" style="margin-left: 10px" href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
 
   <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
 

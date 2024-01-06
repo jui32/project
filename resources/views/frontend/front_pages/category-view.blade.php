@@ -20,7 +20,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="item-image"> <img src="{{url('/uploads/Item/'.$ItemCategory->image)}}"> </div>
-                        {{-- ('uploads/Item', $Item->image) --}}
                     </div>
                 </div>
             </div>

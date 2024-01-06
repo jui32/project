@@ -87,10 +87,10 @@
          <!-- End Header-->
 
   <!-- Header-->
-  <header class="bg-dark py-5">
+  <header class="bg-dark py-1">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Search your product(s)</h1>
+            <h1 class="display- fw-bolder">Search your product</h1>
             
             <form action="{{route('item.search')}}" method="get">
                 <input type="text" class="form-control" placeholder="Search..." name="search">

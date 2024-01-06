@@ -12,6 +12,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">Category Name</th>
+      <th scope="col">Description</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -25,7 +26,6 @@
       <td>
         <a class ="btn btn-primary btn-sm" href="{{route('category.edit',$category_data->id)}}">Edit</a>
         <a class ="btn btn-danger btn-sm" href="{{route('category.delete',$category_data->id)}}">Delete</a>
-        <a class ="btn btn-primary btn-sm" href="#">View</a>
       </td>
     </tr>
     @endforeach

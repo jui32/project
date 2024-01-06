@@ -15,15 +15,15 @@
                                     <img src=" {{url('/uploads/customer/'.auth('customer')->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px"
                                         class="img-thumbnail" />
 
-                                        <div class="middle">
+                                        {{-- <div class="middle">
                                         <a href="">Edit</a>
-                                    </div>
+                                    </div> --}}
                                   
                                 </div>
                                 <div class="userData ml-3">
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a
                                             href="javascript:void(0);">  {{auth('customer')->user()->name}} </a></h2>
-                                    <h6 class="d-block"><a href="javascript:void(0)">{{$confirm}}</a> Confirmed Orders</h6>
+                                    <h6 class="d-block"><a href="javascript:void(0)">{{$completed}}</a> Completed Orders</h6>
                                     <h6 class="d-block"><a href="javascript:void(0)">{{$pending}}</a> Pending Oders</h6>
                                 </div>
                                 <div class="ml-auto">

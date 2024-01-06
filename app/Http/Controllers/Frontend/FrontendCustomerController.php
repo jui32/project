@@ -21,11 +21,11 @@ class FrontendCustomerController extends Controller
         // dd(auth('customer')->user()->id);
         $id = auth('customer')->user()->id;
         $pending = order::where('user_id', $id)->where('status', '=', 'pending')->count();
-        $confirm = order::where('user_id', $id)->where('status', '=', 'confirm')->count();
+        $completed = order::where('user_id', $id)->where('status', '=', 'completed')->count();
         // dd($pending);
         $list = order::where('user_id', $id)->get();
         // dd($list);
-        return view('frontend.front_pages.profile', compact('pending', 'confirm', 'list'));
+        return view('frontend.front_pages.profile', compact('pending', 'completed', 'list'));
     }
     
     

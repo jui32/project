@@ -59,19 +59,8 @@
             </li>
 
             
-               <!-- Report -->
+               <!-- DeliveryMan -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-target="#collapseTwo"
-                     aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Report<span>
-                </a>
-
-                <!-- Delivery -->
-
-
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('Delivery.list')}}"  data-target="#collapseTwo"
                      aria-controls="collapseTwo">
