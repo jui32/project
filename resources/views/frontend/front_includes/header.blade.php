@@ -166,10 +166,7 @@
           </div>
 
         
-          <div class="mb-3">
-            <label for="">Role</label>
-            <input type="text" name="role" class="form-control" placeholder="Enter role">
-          </div>
+        
         </div>
       </div>
       <div class="modal-footer">

@@ -79,8 +79,6 @@ Route::group(['middleware' => 'checkCustomer'], function () {
 
 
     
-   
-    
     // SSLCOMMERZ Start
 
     Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
