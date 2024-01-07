@@ -13,7 +13,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src=" {{url('/uploads/uploads/'.auth()->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                    <img src="{{url('/uploads/uploads/'.auth()->user()->image)}}" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
                                     </div>
                                 </div>

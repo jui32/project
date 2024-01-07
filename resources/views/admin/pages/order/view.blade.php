@@ -52,6 +52,8 @@
     				<strong>Billed To:</strong><br>
     					{{$order->user_id}}<br>
 						{{$order->address}}<br>
+						
+
     				</address>
     			</div>
                
@@ -60,7 +62,7 @@
     				<address>
         			<strong>Shipped To:</strong><br>
                     {{$order->user_id}}<br>
-                    {{$order->receiver_address}}<br>
+					{{$order->address}}<br>
     				</address>
     			</div>
     		</div>
@@ -68,8 +70,8 @@
     			<div class="col-xs-6">
     				<address>
     					<strong>Payment Method:</strong><br>
-    					Visa ending **** 4242<br>
-    					jsmith@email.com
+    					SSLCommerz<br>
+    					
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
@@ -127,16 +129,16 @@
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Shipping</strong></td>
-    								<td class="no-line text-right">100 .BDT</td> 
+    								<td class="no-line text-right">70 .BDT</td> 
     							</tr>
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line text-center"><strong>Total</strong></td>
-    								<td class="no-line text-right">{{$item->total}}</td>
+    								<td class="no-line text-right">{{$order->total_price}}</td>
     							</tr>
 
-                                <a class ="btn btn-primary btn-sm" href="#">Update</a>
+                                {{-- <a class ="btn btn-primary btn-sm" href="#">Update</a> --}}
 
     						</tbody>
                             

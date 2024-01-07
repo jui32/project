@@ -35,7 +35,14 @@
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
 
-                        </div>
+
+                            <div class="text-center col-lg-6 col-md-6 float-end mt-6">
+                                <h4 class="display-3 section-title ff-secondary text-start text-secondary fw-normal mb-4">Location</h4>
+                                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>House 15 Road No. 10A, Dhaka 1230</p>
+                                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                                <p class="mb-2"><i class="fa fa-envelope me-3"></i>restoran@example.com</p>
+                              
+                            </div>
                     </div>
                 </div>
             </div>

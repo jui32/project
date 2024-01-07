@@ -67,8 +67,8 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-1.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
+                    <h5 class="mb-0">Steve Storen</h5>
+                    <small>Senior Chef</small>
                     <div class="d-flex justify-content-center mt-3">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -81,13 +81,9 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-2.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h5 class="mb-0">David Poul</h5>
+                    <small>Master Chef</small>
+                   
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -95,13 +91,9 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-3.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h5 class="mb-0">William ill</h5>
+                    <small>General Chef</small>
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -109,13 +101,9 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-4.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
-                    <div class="d-flex justify-content-center mt-3">
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h5 class="mb-0">Bobby Bil</h5>
+                    <small>Junior Chef</small>
+                  
                 </div>
             </div>
         </div>
