@@ -99,7 +99,7 @@ public function store(Request $request)
         'password'=>bcrypt($request->user_password),
     ]);
 
-    return redirect()->back()->with('message','User created successfully.');
+    return redirect()->route('users.list')->with('message','User created successfully.');
 
 
 }
@@ -137,9 +137,21 @@ public function update(Request $request,$id)
        
     
     ]);
-    return redirect()->back();
+    return redirect(Route('users.list'));
     }
     
+    public function delete($id)
+    {
+      $users=User::find($id);
+      if($users)
+      {
+        $users->delete();
+      }
+
+      notify()->success('User deleted Successfully.');
+      return redirect(Route('users.list'));
+    }
+
 }
 
 
