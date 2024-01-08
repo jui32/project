@@ -42,7 +42,7 @@
 
 <body>
     <div class="container">
-        <button onclick="printlist()">Print List</button>
+        <button class="btn btn-primary" onclick="printlist()">Print List</button>
         <script>
             function printlist(){
                 window.print();

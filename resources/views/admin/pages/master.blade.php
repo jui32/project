@@ -55,6 +55,9 @@
                 @yield('content')
                 <!-- /.container-fluid -->
 
+                {{-- <h1 class="display-3 text-dark animated slideInLeft">Welcome<br>to Restoran admin panel</h1> --}}
+
+
             </div>
             <!-- End of Main Content -->
 

@@ -1,10 +1,6 @@
 @extends('admin.pages.master')
 @section('content')
 
-<a class="btn btn-primary" href="{{route('order.printview',$order->id)}}">Print</a>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +40,10 @@
 </head>
 <body>
     <div class="container">
+
     <div class="row">
+		<a class="btn btn-primary" href="{{route('order.printview',$order->id)}}">Print</a>
+
         <div class="col-xs-12">
     		<div class="invoice-title">
     			{{-- <h2>Invoice</h2><h3 class="pull-right">{{$order->id}}</h3> --}}
@@ -168,6 +167,8 @@
         <option value="completed">completed</option>
         <option value="ontheway">on the way</option>
 		<option value="processing">processing</option>
+		<option value="cancelled">cancelled</option>
+
 
         </select>
     </div>

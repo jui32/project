@@ -94,7 +94,7 @@
             
             <form action="{{route('item.search')}}" method="get">
                 <input type="text" class="form-control" placeholder="Search..." name="search">
-                <button type="submit" class="btn btn-success">Search</button>
+                <button type="submit" class="btn btn-danger">Search</button>
             </form>
            
         </div>

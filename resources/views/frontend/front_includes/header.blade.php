@@ -1,7 +1,7 @@
 <!-- Header-->
 <div class="container-xxl position-relative p-0">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-  <a href class="navbar-brand p-0">
+  <a href="{{route('home')}}" class="navbar-brand p-0">
   <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
   
   </a>
@@ -12,10 +12,10 @@
   <div class="navbar-nav ms-auto py-0 pe-4">
   {{-- <a href="{{route('item.category')}}" class="nav-item nav-link active">Categories</a> --}}
   <a href="{{route('home')}}" class="nav-item nav-link active " >Home</a>
-  <a href="{{route('front_item')}}" class="nav-item nav-link ">All Items</a>
+  <a href="{{route('front_item')}}" class="nav-item nav-link active ">All Items</a>
  
     <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+      <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                               @foreach ($headerCategories as $category)
                               <li>
@@ -25,12 +25,12 @@
                             </ul>
 
     </div>
-    <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-    <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+    <a href="{{route('about')}}" class="nav-item nav-link active">About</a>
+    <a href="{{route('contact')}}" class="nav-item nav-link active">Contact</a>
 </div>
 </div>
 
-<a class="btn btn-outline-light" href="{{route('cart.view')}}">
+<a class="btn btn-outline-primary" href="{{route('cart.view')}}">
   <i class="bi-cart-fill me-1"></i>
   Cart
   <span class="badge bg-dark text-white ms-1 rounded-pill">
@@ -46,16 +46,16 @@
 <!-- Button trigger modal -->
 @if (auth('customer')->user())
   {{-- <li style="list-style: none; margin-right:20px;">{{auth('customer')->user()->name}}</li> --}}
-  <a class="btn btn-outline-light" style="margin-left: 10px" href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
+  <a class="btn btn-outline-primary" style="margin-left: 10px" href="{{route('profile.view')}}"> {{auth('customer')->user()->name}} </a>
 
-  <a button type="button" class="btn btn-primary" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
+  <a button type="button" class="btn btn-warning" style="margin-left: 10px" href="{{ route('customer.logout') }}">Logout</a>
 
   @else
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
+  <button type="button" class="btn btn-success" style="margin-left: 10px" data-bs-toggle="modal" data-bs-target="#exampleModal_1">
     Login
   </button>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class="btn btn-warning" style="margin-left: 10px" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Registration
   </button>
   @endif

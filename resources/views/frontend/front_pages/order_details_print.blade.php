@@ -40,13 +40,14 @@
 </head>
 <body>
     <div class="container">
-    <div class="row">
-        <button onclick="printlist()">Print List</button>
+		<button class="btn btn-primary" onclick="printlist()">Print List</button>
         <script>
             function printlist(){
                 window.print();
             }
         </script>
+    <div class="row">
+        
         <div class="col-xs-12">
     		<div class="invoice-title">
     			{{-- <h2>Invoice</h2><h3 class="pull-right">{{$order->id}}</h3> --}}

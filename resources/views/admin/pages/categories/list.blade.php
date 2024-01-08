@@ -24,7 +24,7 @@
       <td>{{$category_data->category_name}}</td>
       <td>{{$category_data->category_description}}</td>
       <td>
-        <a class ="btn btn-primary btn-sm" href="{{route('category.edit',$category_data->id)}}">Edit</a>
+        <a class ="btn btn-success btn-sm" href="{{route('category.edit',$category_data->id)}}">Edit</a>
         <a class ="btn btn-danger btn-sm" href="{{route('category.delete',$category_data->id)}}">Delete</a>
       </td>
     </tr>
