@@ -10,6 +10,17 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function order_details_print($id)
+    {
+        // $order = Order::find($id);
+      
+        // dd($deliveryman) ;
+        $order = Order::with('details')->find($id);
+        return view('frontend.front_pages.order_details_print',compact('order'));
+    }
+
+
+
     public function orderPlace(Request $request)
     {
         //  dd($request->all());

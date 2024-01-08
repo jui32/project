@@ -41,6 +41,12 @@
 <body>
     <div class="container">
     <div class="row">
+        <button onclick="printlist()">Print List</button>
+        <script>
+            function printlist(){
+                window.print();
+            }
+        </script>
         <div class="col-xs-12">
     		<div class="invoice-title">
     			{{-- <h2>Invoice</h2><h3 class="pull-right">{{$order->id}}</h3> --}}
@@ -130,12 +136,12 @@
     								<td class="no-line text-center"><strong>Total</strong></td>
     								<td class="no-line text-right">{{$order->total_price}}</td>
     							</tr>
+
+                               
+
     						</tbody>
                             
                           </table>
-
-						  <a class="btn btn-danger" href="{{route('order.order_details_print',$order->id)}}">Print</a>
-
     				</div>
     			</div>
     		</div>

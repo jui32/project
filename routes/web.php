@@ -75,6 +75,9 @@ Route::group(['middleware' => 'checkCustomer'], function () {
 
     Route::get('/order_details/{item_id}',[FrontendOrderController::class,'order_details'])->name('Order.details');
 
+    Route::get('/order_details/Print/{id}', [FrontendOrderController::class, 'order_details_print'])->name('order.order_details_print');
+
+
     Route::get('/cancel-order/{item_id}', [FrontendOrderController::class, 'cancelOrder'])->name('order.cancel');
 
 
@@ -172,6 +175,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/order/view/{id}', [AdminOrderController::class, 'view'])->name('order.view');
             Route::post('/order/view/status/{id}', [AdminOrderController::class, 'status'])->name('order.view,status');
             Route::post('/order/view/deliveryman/{id}', [AdminOrderController::class, 'deliveryman'])->name('order.view.deliveryman');
+
+            Route::get('/order/view/Print/{id}', [AdminOrderController::class, 'printview'])->name('order.printview');
+
 
             Route::get('/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('order.delete');
 

@@ -14,7 +14,14 @@ class AdminOrderController extends Controller
         return view('admin.pages.order.print',compact('order_data'));
     }
 
-
+    public function printview($id)
+    {
+        // $order = Order::find($id);
+      
+        // dd($deliveryman) ;
+        $order = Order::with('details')->find($id);
+        return view('admin.pages.order.printview',compact('order'));
+    }
 
     public function list(){
         // dd('hi');

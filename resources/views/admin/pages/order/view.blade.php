@@ -1,6 +1,10 @@
 @extends('admin.pages.master')
 @section('content')
 
+<a class="btn btn-primary" href="{{route('order.printview',$order->id)}}">Print</a>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

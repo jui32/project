@@ -1,8 +1,9 @@
-@extends('frontend.front_pages.master2')
+@extends('admin.pages.master')
 @section('content')
 
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
@@ -38,8 +39,15 @@
         });
     </script>
 </head>
+
 <body>
     <div class="container">
+        <button onclick="printlist()">Print List</button>
+        <script>
+            function printlist(){
+                window.print();
+            }
+        </script>
     <div class="row">
         <div class="col-xs-12">
     		<div class="invoice-title">
@@ -51,14 +59,18 @@
     				<address>
     				<strong>Billed To:</strong><br>
     					{{$order->user_id}}<br>
-    					{{$order->address}}<br>
+						{{$order->address}}<br>
+						
+
     				</address>
     			</div>
+               
+
     			<div class="col-xs-6 text-right">
     				<address>
         			<strong>Shipped To:</strong><br>
                     {{$order->user_id}}<br>
-                    {{$order->address}}<br>
+					{{$order->address}}<br>
     				</address>
     			</div>
     		</div>
@@ -67,13 +79,16 @@
     				<address>
     					<strong>Payment Method:</strong><br>
     					SSLCommerz<br>
+    					
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
     					<strong>Order Date:</strong><br>
     					{{$order->created_at}}<br><br>
+						<p>Status: {{$order->status}}</p>
     				</address>
+
     			</div>
     		</div>
     	</div>
@@ -130,12 +145,12 @@
     								<td class="no-line text-center"><strong>Total</strong></td>
     								<td class="no-line text-right">{{$order->total_price}}</td>
     							</tr>
+
+                                {{-- <a class ="btn btn-primary btn-sm" href="#">Update</a> --}}
+
     						</tbody>
                             
                           </table>
-
-						  <a class="btn btn-danger" href="{{route('order.order_details_print',$order->id)}}">Print</a>
-
     				</div>
     			</div>
     		</div>
@@ -145,4 +160,46 @@
 		</script>
 </body>
 </html>
-@endsection
+
+
+
+{{-- <form action="{{route('order.view.deliveryman',$order->id)}}" method="post">
+    
+@csrf
+    {{-- <div class="form-group">
+        <label for="InputPaymentMethod">Status:</label>
+        <select name="status" id="" class="form-control" required>
+        <option value="completed">completed</option>
+        <option value="ontheway">on the way</option>
+		<option value="processing">processing</option>
+
+        </select>
+    </div> --}}
+{{-- 
+	<div class="form-group">
+        <label for="InputPaymentMethod">Delivery man:</label>
+		<select name="deliveryMan" id="" class="form-control" required>
+		<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<option value="" selected disabled> Select Delivery Man </option>
+			@foreach ($deliveryman as $delivery)
+			{{-- <li>
+				<a class="dropdown-item" href="{{ route('Delivery.list',$delivery->id) }}">{{$delivery->name}}</a>
+			</li> 
+			<option value={{$delivery->id}} {{ $delivery->id == $order->deliveryMan ? "selected" : "" }}> {{$delivery->name}} </option>
+			@endforeach
+		  </ul>
+		</select>
+    </div> 
+
+    
+  </form> --}}
+ 
+  @endsection
+   
+   
+
+   
+       
+         
+       
+    

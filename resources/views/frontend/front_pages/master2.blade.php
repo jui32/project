@@ -87,19 +87,7 @@
         <!-- End Header-->
 
  <!-- Header-->
- <header class="bg-dark py-5">
-   <div class="container px-4 px-lg-5 my-5">
-       <div class="text-center text-white">
-           <h1 class="display-4 fw-bolder">Search your product(s)</h1>
-           
-           <form action="{{route('item.search')}}" method="get">
-               <input type="text" class="form-control" placeholder="Search..." name="search">
-               <button type="submit" class="btn btn-success">Search</button>
-           </form>
-          
-       </div>
-   </div>
-</header>
+ 
 
         <!-- main-->
 
